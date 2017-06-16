@@ -48,6 +48,7 @@ CREATE TABLE Company (
 GO
 
 CREATE TABLE ToEmploy( 
+	EmployId INT PRIMARY KEY,
     StudentId INT FOREIGN KEY REFERENCES Student(StudentID) ,
     JobId INT FOREIGN KEY REFERENCES Job(JobID), 
     StudentName VARCHAR(20),
@@ -61,8 +62,9 @@ CREATE TABLE ToEmploy(
 GO
 
 CREATE TABLE Recruitment(
+	RecruitmentId INT PRIMARY KEY,
     JobID int FOREIGN KEY REFERENCES Job(JobID),
-    CompanyID int FOREIGN KEY REFERENCES Company(CompanyID),
+    CompanyId int FOREIGN KEY REFERENCES Company(CompanyID),
     JobName varchar(50),
 	JobDescription VARCHAR(500),
     CompanyName varchar(50),
