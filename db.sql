@@ -4,7 +4,7 @@ USE JobManagement
 GO
 
 CREATE TABLE Student (
-	StudentId INT PRIMARY KEY,
+	StudentNo VARCHAR(10) PRIMARY KEY,
 	StudentName VARCHAR(10),
 	Password VARCHAR(20),
 	Gender CHAR(1) CHECK (Gender='M' OR Gender='F'),
@@ -16,8 +16,8 @@ CREATE TABLE Student (
 GO
 
 CREATE TABLE Resume (
-	ResumeId INT PRIMARY KEY,
-	StudentId INT FOREIGN KEY REFERENCES Student(StudentId),
+	ResumeNo VARCHAR(10) PRIMARY KEY,
+	StudentNo VARCHAR(10) FOREIGN KEY REFERENCES Student(StudentNo),
 	ResumeName VARCHAR(10),
 	Gender CHAR(1) CHECK (Gender='M' OR Gender='F'),
 	Age INT,
@@ -32,15 +32,15 @@ CREATE TABLE Resume (
 GO
 
 CREATE TABLE Job (
-	JobId INT PRIMARY KEY,
+	JobNo VARCHAR(10) PRIMARY KEY,
 	JobName VARCHAR(20),
-	JobType VARBINARY(10)
+	JobType VARCHAR(10)
 )
 
 GO
 
 CREATE TABLE Company (
-	CompanyId INT PRIMARY KEY,
+	CompanyNo VARCHAR(10) PRIMARY KEY,
 	CompanyName VARCHAR(10),
 	CompanyLocation VARCHAR(10)
 )
@@ -48,9 +48,9 @@ CREATE TABLE Company (
 GO
 
 CREATE TABLE ToEmploy( 
-	EmployId INT PRIMARY KEY,
-    StudentId INT FOREIGN KEY REFERENCES Student(StudentID) ,
-    JobId INT FOREIGN KEY REFERENCES Job(JobID), 
+	EmployNo VARCHAR(10) PRIMARY KEY,
+    StudentNo VARCHAR(10) FOREIGN KEY REFERENCES Student(StudentNo) ,
+    JobNo VARCHAR(10) FOREIGN KEY REFERENCES Job(JobNo), 
     StudentName VARCHAR(20),
     JobName VARCHAR(50),
     CompanyName VARCHAR(50),
@@ -62,9 +62,9 @@ CREATE TABLE ToEmploy(
 GO
 
 CREATE TABLE Recruitment(
-	RecruitmentId INT PRIMARY KEY,
-    JobID int FOREIGN KEY REFERENCES Job(JobID),
-    CompanyId int FOREIGN KEY REFERENCES Company(CompanyID),
+	RecruitmentNo VARCHAR(10) PRIMARY KEY,
+    JobNo VARCHAR(10) FOREIGN KEY REFERENCES Job(JobNo),
+    CompanyNo VARCHAR(10) FOREIGN KEY REFERENCES Company(CompanyNo),
     JobName varchar(50),
 	JobDescription VARCHAR(500),
     CompanyName varchar(50),
@@ -78,6 +78,6 @@ CREATE TABLE Recruitment(
 GO
 
 CREATE TABLE Manager  (
-	ManagerID INT PRIMARY KEY,
+	ManagerNo VARCHAR(10) PRIMARY KEY,
 	Password VARCHAR(20)
 )
