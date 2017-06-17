@@ -7,9 +7,9 @@
     <property name="hibernate.connection.username">sa</property>
     <property name="hibernate.connection.password">SQLSQLSQL</property>
     <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+    <property name="hibernate.show_sql">true</property>
     <property name="hibernate.current_session_context_class">thread</property>
     <property name="hibernate.query.factory_class">org.hibernate.hql.internal.classic.ClassicQueryTranslatorFactory</property>
-    <property name="hibernate.show_sql">true</property>
     <mapping resource="pojo/Student.hbm.xml"/>
     <mapping resource="pojo/ToEmploy.hbm.xml"/>
     <mapping resource="pojo/Company.hbm.xml"/>

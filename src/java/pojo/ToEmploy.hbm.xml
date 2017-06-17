@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 17, 2017 1:34:56 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.ToEmploy" table="ToEmploy" schema="dbo" catalog="JobManagement" optimistic-lock="version">
+        <id name="employNo" type="string">
+            <column name="EmployNo" length="10" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="job" class="pojo.Job" fetch="select">
+            <column name="JobNo" length="10" />
+        </many-to-one>
+        <many-to-one name="student" class="pojo.Student" fetch="select">
+            <column name="StudentNo" length="10" />
+        </many-to-one>
+        <property name="studentName" type="string">
+            <column name="StudentName" length="20" />
+        </property>
+        <property name="jobName" type="string">
+            <column name="JobName" length="50" />
+        </property>
+        <property name="companyName" type="string">
+            <column name="CompanyName" length="50" />
+        </property>
+        <property name="status" type="string">
+            <column name="Status" length="3" />
+        </property>
+        <property name="applyTime" type="time">
+            <column name="ApplyTime" length="16" />
+        </property>
+        <property name="expectedSalary" type="java.lang.Integer">
+            <column name="ExpectedSalary" />
+        </property>
+    </class>
+</hibernate-mapping>
