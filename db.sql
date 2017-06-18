@@ -6,7 +6,7 @@ GO
 CREATE TABLE Student (
 	StudentNo VARCHAR(10) PRIMARY KEY,
 	StudentName VARCHAR(10),
-	Password VARCHAR(20),
+	Password VARCHAR(50),
 	Gender CHAR(1) CHECK (Gender='M' OR Gender='F'),
 	ResumeAmount INT,
 	Status VARCHAR(3),
@@ -79,5 +79,6 @@ GO
 
 CREATE TABLE Manager  (
 	ManagerNo VARCHAR(10) PRIMARY KEY,
-	Password VARCHAR(20)
+	ManagerName VARCHAR(20),
+	Password VARCHAR(50)
 )

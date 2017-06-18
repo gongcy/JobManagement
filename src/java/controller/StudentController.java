@@ -6,7 +6,10 @@
 package controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import pojo.Student;
 
 /**
  *
@@ -16,4 +19,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value = "/students")
 public class StudentController {
     
+    @RequestMapping(value = "/login.htm", method = RequestMethod.POST)
+    public String register(Student stu, ModelMap map) {
+        
+        return "registerResult";
+    }
 }
