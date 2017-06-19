@@ -22,3 +22,6 @@
 hs_err_pid*
 /build/
 /dist/
+
+#netbeans config files
+private.*

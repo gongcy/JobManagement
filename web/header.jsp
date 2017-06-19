@@ -10,10 +10,10 @@
         <a class="logo" href="" title="Job-hunting">Job-hunting</a>
         <div class="nav">
             <a class="nav-this" href="jie/index.html">
-                <i class="iconfont icon-wenda"></i>Home
+                <i class="iconfont">&#xe605</i>Home
             </a>
             <a href="" target="_blank">
-                <i class="iconfont icon-ui"></i>Position
+                <i class="iconfont icon-ui"></i>Apply for a job     
             </a>
             <a href="" target="_blank">
                 <i class="iconfont icon-ui"></i>Post a job
