@@ -1,5 +1,5 @@
 package pojo;
-// Generated Jun 17, 2017 1:34:53 PM by Hibernate Tools 4.3.1
+// Generated Jun 21, 2017 2:29:16 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -18,8 +18,8 @@ public class Student  implements java.io.Serializable {
      private Integer resumeAmount;
      private String status;
      private Character active;
-     private Set toEmploys = new HashSet(0);
      private Set resumes = new HashSet(0);
+     private Set toEmploys = new HashSet(0);
 
     public Student() {
     }
@@ -28,7 +28,7 @@ public class Student  implements java.io.Serializable {
     public Student(String studentNo) {
         this.studentNo = studentNo;
     }
-    public Student(String studentNo, String studentName, String password, Character gender, Integer resumeAmount, String status, Character active, Set toEmploys, Set resumes) {
+    public Student(String studentNo, String studentName, String password, Character gender, Integer resumeAmount, String status, Character active, Set resumes, Set toEmploys) {
        this.studentNo = studentNo;
        this.studentName = studentName;
        this.password = password;
@@ -36,8 +36,8 @@ public class Student  implements java.io.Serializable {
        this.resumeAmount = resumeAmount;
        this.status = status;
        this.active = active;
-       this.toEmploys = toEmploys;
        this.resumes = resumes;
+       this.toEmploys = toEmploys;
     }
    
     public String getStudentNo() {
@@ -89,19 +89,19 @@ public class Student  implements java.io.Serializable {
     public void setActive(Character active) {
         this.active = active;
     }
-    public Set getToEmploys() {
-        return this.toEmploys;
-    }
-    
-    public void setToEmploys(Set toEmploys) {
-        this.toEmploys = toEmploys;
-    }
     public Set getResumes() {
         return this.resumes;
     }
     
     public void setResumes(Set resumes) {
         this.resumes = resumes;
+    }
+    public Set getToEmploys() {
+        return this.toEmploys;
+    }
+    
+    public void setToEmploys(Set toEmploys) {
+        this.toEmploys = toEmploys;
     }
 
 

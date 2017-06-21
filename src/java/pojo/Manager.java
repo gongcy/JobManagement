@@ -1,5 +1,5 @@
 package pojo;
-// Generated Jun 17, 2017 1:34:53 PM by Hibernate Tools 4.3.1
+// Generated Jun 21, 2017 2:29:16 PM by Hibernate Tools 4.3.1
 
 
 
@@ -10,6 +10,7 @@ public class Manager  implements java.io.Serializable {
 
 
      private String managerNo;
+     private String managerName;
      private String password;
 
     public Manager() {
@@ -19,8 +20,9 @@ public class Manager  implements java.io.Serializable {
     public Manager(String managerNo) {
         this.managerNo = managerNo;
     }
-    public Manager(String managerNo, String password) {
+    public Manager(String managerNo, String managerName, String password) {
        this.managerNo = managerNo;
+       this.managerName = managerName;
        this.password = password;
     }
    
@@ -30,6 +32,13 @@ public class Manager  implements java.io.Serializable {
     
     public void setManagerNo(String managerNo) {
         this.managerNo = managerNo;
+    }
+    public String getManagerName() {
+        return this.managerName;
+    }
+    
+    public void setManagerName(String managerName) {
+        this.managerName = managerName;
     }
     public String getPassword() {
         return this.password;
