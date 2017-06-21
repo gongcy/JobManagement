@@ -48,9 +48,9 @@
                         </div>
                         <div class="layui-form-item">
                             <div class="layui-input-inline">
-                                <input type="checkbox" name="" title="Java" checked>
+                                <input type="checkbox" name="" title="Java" >
                                 <input type="checkbox" name="" title="C++">
-                                <input type="checkbox" name="" title="Python" disabled>
+                                <input type="checkbox" name="" title="Python">
                             </div>
                         </div>
                     </div>
