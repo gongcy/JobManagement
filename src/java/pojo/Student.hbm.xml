@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Jun 21, 2017 2:22:40 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated Jun 21, 2017 2:29:17 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="pojo.Student" table="Student" schema="dbo" catalog="JobManagement" optimistic-lock="version">
         <id name="studentNo" type="string">
@@ -12,7 +12,7 @@
             <column name="StudentName" length="10" />
         </property>
         <property name="password" type="string">
-            <column name="Password" length="20" />
+            <column name="Password" length="50" />
         </property>
         <property name="gender" type="java.lang.Character">
             <column name="Gender" length="1" />
@@ -26,17 +26,17 @@
         <property name="active" type="java.lang.Character">
             <column name="ACTIVE" length="1" />
         </property>
-        <set name="toEmploys" table="ToEmploy" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="StudentNo" length="10" />
-            </key>
-            <one-to-many class="pojo.ToEmploy" />
-        </set>
         <set name="resumes" table="Resume" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="StudentNo" length="10" />
             </key>
             <one-to-many class="pojo.Resume" />
+        </set>
+        <set name="toEmploys" table="ToEmploy" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="StudentNo" length="10" />
+            </key>
+            <one-to-many class="pojo.ToEmploy" />
         </set>
     </class>
 </hibernate-mapping>
