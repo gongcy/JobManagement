@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Registration - Job-hunting</title>
+        <title>Student|Registration</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <meta name="keywords" content="job,huting">
         <link rel="stylesheet" href="res/layui/css/layui.css">

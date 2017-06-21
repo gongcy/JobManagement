@@ -23,7 +23,7 @@
             <div class="nav-user">
                 <!-- 未登入状态 -->
                 <a class="unlogin" href="user/login.html"><i class="iconfont icon-touxiang"></i></a>
-                <span><a href="user/login.html">Login</a><a href="user/reg.html">Register</a></span>
+                <span><a href="stu_login.jsp">Login</a><a href="stu_reg.jsp">Register</a></span>
 
                 <!-- 登入后的状态 -->
 

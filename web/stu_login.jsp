@@ -10,7 +10,7 @@
 
         <head>
             <meta charset="utf-8">
-            <title>Login - Job-hunting</title>
+            <title>Student|Log In</title>
             <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
             <meta name="keywords" content="job,huting">
             <link rel="stylesheet" href="res/layui/css/layui.css">
