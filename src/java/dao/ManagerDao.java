@@ -29,7 +29,7 @@ public class ManagerDao {
 //        session.close();
     }
     
-    public Manager getStudent(String magno) {
+    public Manager getManager(String magno) {
         Session session = sessionFactory.openSession();
         Transaction tx = session.getTransaction();
         Manager m = (Manager)session.get(Manager.class, magno);

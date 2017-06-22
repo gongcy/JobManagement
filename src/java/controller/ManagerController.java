@@ -12,46 +12,44 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import pojo.Student;
-import service.StudentService;
+import pojo.Manager;
+import service.ManagerService;
 
 /**
  *
- * @author gongcy
+ * @author Administrator
  */
 @Controller
-@RequestMapping(value = "/student")
-public class StudentController {
+@RequestMapping(value = "/manager")
+public class ManagerController {
 
     @Autowired
-    private StudentService studentService;
+    private ManagerService managerService;
 
     @RequestMapping(value = "/login.htm", method = RequestMethod.POST)
-    public String login(Student stu, HttpSession session,
-            @RequestParam("vcode") String vcode,
-            @RequestParam("stuid") String stuid, @RequestParam("pass") String stupwd) {
+    public String validateLogin(Manager mag, HttpSession session,
+            @RequestParam("vcode") String vcode, @RequestParam("stuid") String magid,
+            @RequestParam("pass") String magpwd) {
         if (!session.getAttribute("rand").equals(vcode)) {
             return "loginFail";
         }
-        Student s = studentService.validateStudent(stuid, stupwd);
-        if (s != null) {
+        Manager m = managerService.validateManager(magid, magpwd);
+        if (m != null) {
             return "loginSuccess";
         }
         return "loginFail";
     }
 
     @RequestMapping(value = "/register.htm", method = RequestMethod.POST)
-    public String register(@RequestParam("stuid") String stuid,
-            @RequestParam("pass") String stupwd,
-            @RequestParam("stuname") String stuname, @RequestParam("sex") Integer stusex) {
-        Student s = new Student();
-        s.setGender((stusex == 0) ? 'M' : 'F');
+    public String register(@RequestParam("stuid") String magid,
+            @RequestParam("pass") String magpwd,
+            @RequestParam("stuname") String magname) {
+        Manager m = new Manager();
+        m.setManagerName(magname);
+        m.setManagerNo(magid);
         MD5 md5 = new MD5();
-        s.setPassword(md5.getMD5ofStr(stupwd));
-        s.setStudentNo(stuid);
-        s.setStudentName(stuname);
+        m.setPassword(md5.getMD5ofStr(magpwd));
 
         return "registerResult";
     }
-
 }
