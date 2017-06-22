@@ -18,6 +18,7 @@
     <body>
 
         <jsp:include page="header.jsp"/>
+        
         <div class="main layui-clear">
             <div class="wrap">
                 <div class="content">

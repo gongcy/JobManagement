@@ -25,13 +25,13 @@
             <div class="fly-panel fly-panel-user" pad20>
                 <div class="layui-tab layui-tab-brief">
                     <ul class="layui-tab-title">
-                        <li><a href="login.jsp">Sign In</a></li>
+                        <li><a href="stu_login.jsp">Sign In</a></li>
                         <li class="layui-this">Sign Up</li>
                     </ul>
                     <div class="layui-form layui-tab-content" id="LAY_ucm" style="padding: 20px 0;">
                         <div class="layui-tab-item layui-show">
                             <div class="layui-form layui-form-pane">
-                                <form method="post" action="user/register.htm">
+                                <form method="post" action="student/register.htm">
                                     <div class="layui-form-item">
                                         <label for="L_stuid" class="layui-form-label">Student ID</label>
                                         <div class="layui-input-inline">
