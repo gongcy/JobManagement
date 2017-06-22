@@ -28,13 +28,15 @@
                             <a href="jie/index.html">Product</a>
                             <a href="jie/index.html">Designer</a>
                         </span>
+
                         <form action="http://cn.bing.com/search" class="fly-search">
                             <input class="layui-input" autocomplete="off" placeholder="Search job" type="text" name="q">
+                            <i class="iconfont icon-sousuo"></i>
                         </form>  
                     </div>
                     <ul class="layui-nav layui-nav-tree" lay-filter="nav_click">
                         <li class="layui-nav-item">
-                            <a href="javascript:;">FrontEnd</a>
+                            <a href="javascript:;">Front End</a>
                             <dl class="layui-nav-child">
                                 <dd><a href="javascript:;">Web FrontEnd</a></dd>
                                 <dd><a href="javascript:;">JavaScript</a></dd>
@@ -43,7 +45,7 @@
                             </dl>
                         </li>
                         <li class="layui-nav-item layui-nav-itemed">
-                            <a href="javascript:;">BackEnd</a>
+                            <a href="javascript:;">Back End</a>
                             <dl class="layui-nav-child">
                                 <dd><a href="javascript:;">Java</a></dd>
                                 <dd><a href="javascript:;">Python</a></dd>
@@ -60,7 +62,7 @@
                     </dt>
                     <dd>
                         <a href="jie/detail.html">使用 layui 秒搭后台大布局（基本结构）</a>
-                        <span><i class="iconfont">&#xe60b;</i> 6087</span>
+                        <span><i class="iconfont icon-shouye"></i> 6087</span>
                     </dd>
                 </dl>
                 <dl class="fly-panel fly-list-one">
@@ -72,7 +74,7 @@
                 </dl>
             </div>
         </div>
-        <jsp:include page="footer.jsp"/>
+        <jsp:include page="footer.jsp" />
         <script src="res/layui/layui.js"></script>
         <script>
             layui.use('element', function () {
