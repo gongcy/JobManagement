@@ -33,7 +33,7 @@ public class StudentService {
     }
 
     // accomplish register
-    public boolean register(Student student) {
+    public boolean registerStudent(Student student) {
         try {
             studentDao.insert(student);
             return true;
@@ -41,5 +41,4 @@ public class StudentService {
             return false;
         }
     }
-
 }

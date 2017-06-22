@@ -11,7 +11,6 @@
     <context:component-scan base-package="controller" />
     <mvc:annotation-driven />
     
-    <!-- 映射静态资源文件目录 -->
     <!--
     <mvc:resources mapping="/js/**" location="/WEB-INF/res/js/" />
     <mvc:resources mapping="/css/**" location="/WEB-INF/templates/css/" />
