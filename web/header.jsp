@@ -9,13 +9,13 @@
         <div class="main">
             <a class="logo" href="" title="Job-hunting">Job-hunting</a>
             <div class="nav">
-                <a class="nav-this" href="jie/index.html">
+                <a class="nav-this" href="index.html">
                 <i class="iconfont icon-shouye"></i>Home
             </a>
-                <a href="" target="_blank">
+                <a href="stu_login.html" target="_blank">
                 <i class="iconfont icon-liulanyanjing"></i>Find a job     
             </a>
-                <a href="" target="_blank">
+                <a href="man_login.html" target="_blank">
                 <i class="iconfont icon-tianjia"></i>Post a job
             </a>
             </div>
@@ -23,7 +23,7 @@
             <div class="nav-user">
                 <!-- 未登入状态 -->
                 <a class="unlogin" href="user/login.html"><i class="iconfont icon-touxiang"></i></a>
-                <span><a href="stu_login.jsp">Login</a><a href="stu_reg.jsp">Register</a></span>
+                <span><a href="user/login.html">Login</a><a href="user/reg.html">Register</a></span>
 
                 <!-- 登入后的状态 -->
 
