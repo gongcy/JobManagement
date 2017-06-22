@@ -9,21 +9,21 @@
         <div class="main">
             <a class="logo" href="" title="Job-hunting">Job-hunting</a>
             <div class="nav">
-                <a class="nav-this" href="index.html">
+                <a class="nav-this" href="index.jsp">
                 <i class="iconfont icon-shouye"></i>Home
             </a>
-                <a href="stu_login.html" target="_blank">
+                <a href="stu_login.jsp" target="_blank">
                 <i class="iconfont icon-liulanyanjing"></i>Find a job     
             </a>
-                <a href="man_login.html" target="_blank">
+                <a href="man_login.jsp" target="_blank">
                 <i class="iconfont icon-tianjia"></i>Post a job
             </a>
             </div>
 
             <div class="nav-user">
                 <!-- 未登入状态 -->
-                <a class="unlogin" href="user/login.html"><i class="iconfont icon-touxiang"></i></a>
-                <span><a href="user/login.html">Login</a><a href="user/reg.html">Register</a></span>
+                <a class="unlogin" href="stu_login.jsp"><i class="iconfont icon-touxiang"></i></a>
+                <span><a href="stu_login.jsp">Login</a><a href="stu_login.jsp">Register</a></span>
 
                 <!-- 登入后的状态 -->
 

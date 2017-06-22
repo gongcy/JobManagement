@@ -16,13 +16,13 @@
         <div class="main fly-user-main layui-clear">
             <ul class="layui-nav layui-nav-tree layui-inline">
                 <li class="layui-nav-item">
-                    <a href="stu_aboutme.html"><i class="layui-icon">&#xe604;</i>About Me </a>
+                    <a href="stu_aboutme.jsp"><i class="layui-icon">&#xe604;</i>About Me </a>
                 </li>
                 <li class="layui-nav-item">
-                    <a href="stu_resume.html"><i class="layui-icon">&#xe612;</i>Edit Resume</a>
+                    <a href="stu_resume.jsp"><i class="layui-icon">&#xe612;</i>Edit Resume</a>
                 </li>
                 <li class="layui-nav-item layui-this">
-                    <a href="stu_profile.html"><i class="layui-icon">&#xe620;</i>Edit Profile</a>
+                    <a href="stu_profile.jsp"><i class="layui-icon">&#xe620;</i>Edit Profile</a>
                 </li>
             </ul>
 
