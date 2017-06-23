@@ -7,7 +7,6 @@ package dao;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import pojo.Manager;
 
@@ -16,25 +15,80 @@ import pojo.Manager;
  * @author Administrator
  */
 public class ManagerDao {
-    
+
     @Autowired
     private SessionFactory sessionFactory;
-    
+
     public void insert(Manager manager) {
-        Session session = sessionFactory.openSession();
-        Transaction tx = session.beginTransaction();
-        session.save(manager);
-        tx.commit();
-        session.disconnect();
-//        session.close();
+        Session session = null;
+        try {
+            session = sessionFactory.openSession();
+            session.beginTransaction();
+            session.save(manager);
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            session.getTransaction().rollback();
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
     }
-    
+
+    public void delete(String magno) {
+        Session session = null;
+        try {
+            session = sessionFactory.openSession();
+            session.beginTransaction();
+            Manager m = (Manager) session.load(Manager.class, magno);
+            session.delete(m);
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            session.getTransaction().rollback();
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+    }
+
+    public void update(String magno) {
+        Session session = null;
+        try {
+            session = sessionFactory.openSession();
+            session.beginTransaction();
+            Manager m = (Manager) session.get(Manager.class, magno);
+            session.update(m);
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            session.getTransaction().rollback();
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+    }
+
     public Manager getManager(String magno) {
-        Session session = sessionFactory.openSession();
-        Transaction tx = session.getTransaction();
-        Manager m = (Manager)session.get(Manager.class, magno);
-        tx.commit();
-        session.disconnect();
-        return m;
+        Session session = null;
+        Manager m = null;
+        try {
+            session = sessionFactory.openSession();
+            session.beginTransaction();
+            m = (Manager) session.get(Manager.class, magno);
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            session.getTransaction().rollback();
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+            return m;
+        }
     }
+
 }

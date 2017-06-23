@@ -17,23 +17,15 @@
         <div class="main layui-clear">
 
             <div class="fly-panel fly-panel-user" pad20>
-                <div class="layui-tab">
+                <div class="layui-tab layui-tab-brief">
                     <ul class="layui-tab-title">
-<<<<<<< HEAD
                         <li><a href="stu_login.jsp">Sign In</a></li>
-=======
-                        <li><a href="stu_login.html">Sign In</a></li>
->>>>>>> 88251c062713dec3cd8c8ba798b5d4bd4c1d2eb1
                         <li class="layui-this">Sign Up</li>
                     </ul>
                     <div class="layui-form layui-tab-content" id="LAY_ucm" style="padding: 20px 0;">
                         <div class="layui-tab-item layui-show">
                             <div class="layui-form layui-form-pane">
-<<<<<<< HEAD
                                 <form method="post" action="student/register.htm">
-=======
-                                <form method="post">
->>>>>>> 88251c062713dec3cd8c8ba798b5d4bd4c1d2eb1
                                     <div class="layui-form-item">
                                         <label for="L_stuid" class="layui-form-label">Student ID</label>
                                         <div class="layui-input-inline">

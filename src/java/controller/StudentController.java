@@ -35,6 +35,7 @@ public class StudentController {
         }
         Student s = studentService.validateStudent(stuid, stupwd);
         if (s != null) {
+            session.setAttribute("sid", stuid);
             return "loginSuccess";
         }
         return "loginFail";

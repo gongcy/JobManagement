@@ -7,7 +7,6 @@ package dao;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import pojo.Student;
 
@@ -21,21 +20,75 @@ public class StudentDao {
     private SessionFactory sessionFactory;
 
     public void insert(Student student) {
-        Session session = sessionFactory.openSession();
-        Transaction tx = session.beginTransaction();
-        session.save(student);
-        tx.commit();
-        session.disconnect();
-//        session.close();
+        Session session = null;
+        try {
+            session = sessionFactory.openSession();
+            session.beginTransaction();
+            session.save(student);
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            session.getTransaction().rollback();
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
     }
-    
+
+    public void delete(String stuno) {
+        Session session = null;
+        try {
+            session = sessionFactory.openSession();
+            session.beginTransaction();
+            Student s = (Student) session.load(Student.class, stuno);
+            session.delete(s);
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            session.getTransaction().rollback();
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+    }
+
+    public void update(String stuno) {
+        Session session = null;
+        try {
+            session = sessionFactory.openSession();
+            session.beginTransaction();
+            Student s = (Student) session.load(Student.class, stuno);
+            session.update(s);
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            session.getTransaction().rollback();
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+    }
+
     public Student getStudent(String stuno) {
-        Session session = sessionFactory.openSession();
-        Transaction tx = session.getTransaction();
-        Student s = (Student)session.get(Student.class, stuno);
-        tx.commit();
-        session.disconnect();
-        return s;
+        Session session = null;
+        Student s = null;
+        try {
+            session = sessionFactory.openSession();
+            session.beginTransaction();
+            s = (Student) session.get(Student.class, stuno);
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            session.getTransaction().rollback();
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+            return s;
+        }
     }
-    
+
 }
