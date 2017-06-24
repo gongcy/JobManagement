@@ -4,11 +4,8 @@
 <%
     // Check if login or not
     if (session.getAttribute("id") == null) {
-        response.sendRedirect("index.jsp");
+//        response.sendRedirect("index.jsp");
     }
-//    String id = (String) session.getAttribute("id");
-//    ManagerDao managerDao = new ManagerDao();
-//    Manager m = managerDao.getManager(id);
 %>
 <html>
 
