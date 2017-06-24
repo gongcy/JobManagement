@@ -41,4 +41,8 @@ public class StudentService {
             return false;
         }
     }
+
+    public Student getStudent(String stuno) {
+        return studentDao.getStudent(stuno);
+    }
 }

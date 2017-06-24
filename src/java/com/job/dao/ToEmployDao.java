@@ -73,7 +73,7 @@ public class ToEmployDao {
         }
     }
 
-    public ToEmploy getManager(String magno) {
+    public ToEmploy getToEmploy(String magno) {
         Session session = null;
         ToEmploy m = null;
         try {

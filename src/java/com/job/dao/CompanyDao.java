@@ -74,7 +74,7 @@ public class CompanyDao {
         }
     }
 
-    public Company getManager(String magno) {
+    public Company getCompany(String magno) {
         Session session = null;
         Company m = null;
         try {

@@ -74,7 +74,7 @@ public class RecruitmentDao {
         }
     }
 
-    public Recruitment getManager(String magno) {
+    public Recruitment getRecruitment(String magno) {
         Session session = null;
         Recruitment m = null;
         try {

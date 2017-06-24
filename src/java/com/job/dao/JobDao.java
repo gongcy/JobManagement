@@ -74,7 +74,7 @@ public class JobDao {
         }
     }
 
-    public Job getManager(String magno) {
+    public Job getJob(String magno) {
         Session session = null;
         Job m = null;
         try {

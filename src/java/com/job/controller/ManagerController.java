@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.job.pojo.Manager;
 import com.job.service.ManagerService;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 /**
  *
@@ -21,11 +22,17 @@ import com.job.service.ManagerService;
  */
 @Controller
 @RequestMapping(value = "/manager")
+@SessionAttributes("mid")
 public class ManagerController {
 
     @Autowired
     private ManagerService managerService;
 
+    @RequestMapping(value = "/login.htm", method = RequestMethod.GET)
+    public String login() {
+        return "man_login";
+    }
+    
     @RequestMapping(value = "/login.htm", method = RequestMethod.POST)
     public String validateLogin(Manager mag, HttpSession session,
             @RequestParam("vcode") String vcode, @RequestParam("manid") String magid,
@@ -56,5 +63,20 @@ public class ManagerController {
 //            map.addAttribute("msg", "注册失败，该学号已经注册，请<a href='javascript:history.back();'>返回</a>重试！");
         }
         return "registerResult";
+    }
+    
+    @RequestMapping(value = "/report.htm", method = RequestMethod.GET)
+    public String report() {
+        return "man_report";
+    }
+    
+    @RequestMapping(value = "/user.htm", method = RequestMethod.GET)
+    public String user() {
+        return "man_user";
+    }
+    
+    @RequestMapping(value = "/job.htm", method = RequestMethod.GET)
+    public String job() {
+        return "man_job";
     }
 }

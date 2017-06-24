@@ -9,13 +9,15 @@ import com.job.encrypt.MD5;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.job.pojo.Resume;
 import com.job.pojo.Student;
+import com.job.service.ResumeService;
 import com.job.service.StudentService;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 /**
  *
@@ -23,13 +25,22 @@ import com.job.service.StudentService;
  */
 @Controller
 @RequestMapping(value = "/student")
+@SessionAttributes("sid")
 public class StudentController {
 
     @Autowired
     private StudentService studentService;
 
+    @Autowired
+    private ResumeService resumeService;
+
+    @RequestMapping(value = "/login.htm", method = RequestMethod.GET)
+    public String login() {
+        return "stu_login";
+    }
+    
     @RequestMapping(value = "/login.htm", method = RequestMethod.POST)
-    public String login(Student stu, HttpSession session,
+    public String validateLogin(Student stu, HttpSession session,
             @RequestParam("vcode") String vcode,
             @RequestParam("stuid") String stuid, @RequestParam("pass") String stupwd) {
         if (!session.getAttribute("rand").equals(vcode)) {
@@ -41,6 +52,11 @@ public class StudentController {
             return "loginSuccess";
         }
         return "loginFail";
+    }
+    
+    @RequestMapping(value = "/register.htm", method = RequestMethod.GET)
+    public String register() {
+        return "stu_reg";
     }
 
     @RequestMapping(value = "/register.htm", method = RequestMethod.POST)
@@ -62,31 +78,50 @@ public class StudentController {
         return "registerResult";
     }
 
+    @RequestMapping(value = "/editResume.htm", method = RequestMethod.GET)
+    public String editResume() {
+        return "stu_resume";
+    }
+
     @RequestMapping(value = "/editResume.htm", method = RequestMethod.POST)
     public String editResume(@RequestParam("skill") String skills) {
 
         Resume resume = new Resume();
         resume.setSkills(skills);
 
-        return "";
+        return "stu_resume";
     }
-    
+
+    @RequestMapping(value = "/editProfile.htm", method = RequestMethod.GET)
+    public String editProfile() {
+        return "stu_profile";
+    }
+
     @RequestMapping(value = "/editProfile.htm", method = RequestMethod.POST)
     public String editProfile(@RequestParam("skill") String skills,
-            @RequestParam("email") String email,@RequestParam("stuage") String age,
+            @RequestParam("email") String email, @RequestParam("stuage") String age,
             @RequestParam("stuedu") String edu) {
 
-        
         Resume resume = new Resume();
         resume.setSkills(skills);
 
-        return "";
+        return "stu_profile";
     }
-    
-    @RequestMapping(value = "/aboutme.htm", method = RequestMethod.POST)
-    public String viewProfile(ModelMap map, HttpSession session) {
-        session.getAttribute("id");
-//        map.addAttribute(attributeName, studentService);
+
+    @RequestMapping(value = "/aboutme.htm", method = RequestMethod.GET)
+    public String viewProfile(Model model, HttpSession session) {
+
+        String id = (String) session.getAttribute("id");
+
+        if (id != null) {
+            Resume resume = resumeService.fetchResume(id);
+            Student s = studentService.getStudent(id);
+            model.addAttribute("name", s.getStudentName());
+            model.addAttribute("gender", s.getGender());
+            model.addAttribute("email", resume.getEmail());
+            model.addAttribute("education", resume.getEducation());
+            model.addAttribute("skills", resume.getSkills());
+        }
         return "stu_aboutme";
     }
 }

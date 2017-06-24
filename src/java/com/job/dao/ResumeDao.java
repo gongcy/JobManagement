@@ -9,6 +9,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.job.pojo.Resume;
+import java.util.List;
+import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -74,13 +76,14 @@ public class ResumeDao {
         }
     }
 
-    public Resume getManager(String magno) {
+    public List<Resume> getResumes(String stuno) {
         Session session = null;
-        Resume m = null;
+        List<Resume> l = null;
         try {
             session = sessionFactory.openSession();
             session.beginTransaction();
-            m = (Resume) session.get(Resume.class, magno);
+            Query q = session.createQuery("from Resume where studentno='" + stuno + "'");
+            l = (List<Resume>) q.list();
             session.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -89,7 +92,7 @@ public class ResumeDao {
             if (session != null && session.isOpen()) {
                 session.close();
             }
-            return m;
+            return l;
         }
     }
 }
