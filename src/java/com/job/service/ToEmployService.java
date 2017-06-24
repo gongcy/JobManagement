@@ -6,8 +6,10 @@
 package com.job.service;
 
 import com.job.dao.ToEmployDao;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.job.pojo.ToEmploy;
 
 /**
  *
@@ -15,9 +17,12 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class ToEmployService {
-    
+
     @Autowired
     private ToEmployDao toEmployDao;
-    
-    
+
+    public List<ToEmploy> getAllToEmploys() {
+        return toEmployDao.getAllToEmploys();
+    }
+
 }

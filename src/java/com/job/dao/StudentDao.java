@@ -5,11 +5,12 @@
  */
 package com.job.dao;
 
-import com.job.encrypt.MD5;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.job.pojo.Student;
+import java.util.List;
+import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -111,6 +112,26 @@ public class StudentDao {
                 return true;
             }
             return false;
+        }
+    }
+
+    public List<Student> getAllStudents() {
+        Session session = null;
+        List<Student> s = null;
+        try {
+            session = sessionFactory.openSession();
+            session.beginTransaction();
+            Query q = session.createQuery("from Student");
+            s = (List<Student>) q.list();
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            session.getTransaction().rollback();
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+            return s;
         }
     }
 

@@ -35,42 +35,42 @@
                 <div class="layui-tab">
                     <ul class="layui-tab-title" id="LAY_mine">
                         <li class="layui-this">Job</li>
-                        <li>Student</li>
+                        <li>Student ToEmploy</li>
                     </ul>
                     <div class="layui-tab-content" style="padding: 20px 0;">
                         <div class="layui-form layui-form-pane layui-tab-item layui-show">
                             <table>
                                 <th>No</th>
                                 <th>Name</th>
-                                <th>Gender</th>
-                                <th>Status</th>
-                                <th>Active</th>
-                                <c:forEach items="${ls}" var="stu">
+                                <th>Type</th>
+                                <c:forEach items="${lj}" var="job">
                                     <tr>
-                                        <td>${stu.studentNo}</td>
-                                        <td>${stu.studentName}</td>
-                                        <td>${stu.gender}</td>
-                                        <td>${stu.status}</td>
-                                        <td>${stu.active}</td>
+                                        <td>${job.jobNo}</td>
+                                        <td>${job.jobName}</td>
+                                        <td>${job.jobType}</td>
                                     </tr>
                                 </c:forEach>
                             </table>
                         </div>
                         <div class="layui-form layui-form-pane layui-tab-item">
-                            Student status content
                             <table>
-                                <th>No</th>
-                                <th>Name</th>
-                                <th>Gender</th>
-                                <th>Status</th>
+                                <th>Employ No</th>
+                                <th>Student Name</th>
+                                <th>Job Name</th>
+                                <th>Company Name</th>
                                 <th>Active</th>
-                                <c:forEach items="${ls}" var="stu">
+                                <th>Status</th>
+                                <th>Apply Time</th>
+                                <th>Expected Salary</th>
+                                <c:forEach items="${lemp}" var="emp">
                                     <tr>
-                                        <td>${stu.studentNo}</td>
-                                        <td>${stu.studentName}</td>
-                                        <td>${stu.gender}</td>
-                                        <td>${stu.status}</td>
-                                        <td>${stu.active}</td>
+                                        <td>${emp.employNo}</td>
+                                        <td>${emp.studentName}</td>
+                                        <td>${emp.jobName}</td>
+                                        <td>${emp.companyName}</td>
+                                        <td>${emp.status}</td>
+                                        <td>${emp.applyTime}</td>
+                                        <td>${emp.expectedSalary}</td>
                                     </tr>
                                 </c:forEach>
                             </table>

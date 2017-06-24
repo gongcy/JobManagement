@@ -6,6 +6,7 @@
 package com.job.controller;
 
 import com.job.encrypt.MD5;
+import com.job.pojo.Job;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,8 +14,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.job.pojo.Manager;
+import com.job.pojo.Student;
+import com.job.service.JobService;
 import com.job.service.ManagerService;
+import com.job.service.StudentService;
+import com.job.service.ToEmployService;
+import java.util.List;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import com.job.pojo.ToEmploy;
 
 /**
  *
@@ -28,11 +36,20 @@ public class ManagerController {
     @Autowired
     private ManagerService managerService;
 
+    @Autowired
+    private StudentService studentService;
+
+    @Autowired
+    private JobService jobService;
+
+    @Autowired
+    private ToEmployService toEmployService;
+
     @RequestMapping(value = "/login.htm", method = RequestMethod.GET)
     public String login() {
         return "man_login";
     }
-    
+
     @RequestMapping(value = "/login.htm", method = RequestMethod.POST)
     public String validateLogin(Manager mag, HttpSession session,
             @RequestParam("vcode") String vcode, @RequestParam("manid") String magid,
@@ -42,6 +59,7 @@ public class ManagerController {
         }
         Manager m = managerService.validateManager(magid, magpwd);
         if (m != null) {
+            session.setAttribute("mid", magid);
             return "loginSuccess";
         }
         return "loginFail";
@@ -50,7 +68,7 @@ public class ManagerController {
     @RequestMapping(value = "/register.htm", method = RequestMethod.POST)
     public String register(@RequestParam("manid") String magid,
             @RequestParam("pass") String magpwd,
-            @RequestParam("stuname") String magname) {
+            @RequestParam("manname") String magname) {
         Manager m = new Manager();
         m.setManagerName(magname);
         m.setManagerNo(magid);
@@ -64,19 +82,39 @@ public class ManagerController {
         }
         return "registerResult";
     }
-    
+
     @RequestMapping(value = "/report.htm", method = RequestMethod.GET)
     public String report() {
         return "man_report";
     }
-    
+
     @RequestMapping(value = "/user.htm", method = RequestMethod.GET)
     public String user() {
         return "man_user";
     }
-    
+
+    @RequestMapping(value = "/studentDetails.htm", method = RequestMethod.POST)
+    public String studentDetails(Model model, HttpSession session) {
+
+        String id = (String) session.getAttribute("mid");
+
+        if (id != null) {
+            List<Student> ls = studentService.getAllStudents();
+            model.addAttribute("ls", ls);
+        }
+        return "man_user";
+    }
+
     @RequestMapping(value = "/job.htm", method = RequestMethod.GET)
-    public String job() {
+    public String job(Model model) {
+
+        List<Job> lj = jobService.getAllJobs();
+        model.addAttribute("lj", lj);
+
+        List<ToEmploy> le = toEmployService.getAllToEmploys();
+        model.addAttribute("lemp", le);
+        
         return "man_job";
     }
+
 }

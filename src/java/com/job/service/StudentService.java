@@ -10,6 +10,7 @@ import com.job.encrypt.MD5;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.job.pojo.Student;
+import java.util.List;
 
 /**
  *
@@ -52,5 +53,9 @@ public class StudentService {
         } catch (Exception e) {
             return false;
         }
+    }
+
+    public List<Student> getAllStudents() {
+        return studentDao.getAllStudents();
     }
 }

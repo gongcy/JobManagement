@@ -9,14 +9,17 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.job.pojo.ToEmploy;
+import java.util.List;
+import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
+
 /**
  *
  * @author Administrator
  */
 @Repository
 public class ToEmployDao {
-    
+
     @Autowired
     private SessionFactory sessionFactory;
 
@@ -89,6 +92,26 @@ public class ToEmployDao {
                 session.close();
             }
             return m;
+        }
+    }
+
+    public List<ToEmploy> getAllToEmploys() {
+        Session session = null;
+        List<ToEmploy> s = null;
+        try {
+            session = sessionFactory.openSession();
+            session.beginTransaction();
+            Query q = session.createQuery("from ToEmploy");
+            s = (List<ToEmploy>) q.list();
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            session.getTransaction().rollback();
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+            return s;
         }
     }
 }
