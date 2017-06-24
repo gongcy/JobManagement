@@ -18,7 +18,7 @@
     <body>
 
         <jsp:include page="header.jsp"/>
-        
+
         <div class="main layui-clear">
             <div class="wrap">
                 <div class="content">
@@ -35,44 +35,45 @@
                             <i class="iconfont icon-sousuo"></i>
                         </form>  
                     </div>
-                    <ul class="layui-nav layui-nav-tree" lay-filter="nav_click">
-                        <li class="layui-nav-item">
-                            <a href="javascript:;">Front End</a>
-                            <dl class="layui-nav-child">
-                                <dd><a href="javascript:;">Web FrontEnd</a></dd>
-                                <dd><a href="javascript:;">JavaScript</a></dd>
-                                <dd><a href="javascript:;">U3D</a></dd>
-                                <dd><a href="javascript:;">COCOS2D-X</a></dd>
-                            </dl>
-                        </li>
-                        <li class="layui-nav-item layui-nav-itemed">
-                            <a href="javascript:;">Back End</a>
-                            <dl class="layui-nav-child">
-                                <dd><a href="javascript:;">Java</a></dd>
-                                <dd><a href="javascript:;">Python</a></dd>
-                                <dd><a href="javascript:;">C#</a></dd>
-                                <dd><a href="javascript:;">Linux C/C++</a></dd>
-                            </dl>
-                        </li>
-                    </ul>
+                    <dl class="fly-panel fly-list-one">
+                        <dt class="fly-panel-title">Trending Jobs
+                        </dt>
+                        <dd>
+                            <a href="jie/detail.html">使用 layui 秒搭后台大布局（基本结构）</a>
+                            <span><i class="iconfont icon-shouye"></i> 6087</span>
+                        </dd>
+                    </dl>
+                    <dl class="fly-panel fly-list-one">
+                        <dt class="fly-panel-title">Recently Posted</dt>
+                        <dd>
+                            <a href="jie/detail.html">使用 layui 秒搭后台大布局之基本结构</a>
+                            <span><i class="iconfont">&#xe60c;</i> 96</span>
+                        </dd>
+                    </dl>
+
                 </div>
             </div>
             <div class="edge">
-                <dl class="fly-panel fly-list-one">
-                    <dt class="fly-panel-title">Trending Jobs
-                    </dt>
-                    <dd>
-                        <a href="jie/detail.html">使用 layui 秒搭后台大布局（基本结构）</a>
-                        <span><i class="iconfont icon-shouye"></i> 6087</span>
-                    </dd>
-                </dl>
-                <dl class="fly-panel fly-list-one">
-                    <dt class="fly-panel-title">Recently Posted</dt>
-                    <dd>
-                        <a href="jie/detail.html">使用 layui 秒搭后台大布局之基本结构</a>
-                        <span><i class="iconfont">&#xe60c;</i> 96</span>
-                    </dd>
-                </dl>
+                <ul class="layui-nav layui-nav-tree" lay-filter="nav_click">
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">Front End</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;">Web FrontEnd</a></dd>
+                            <dd><a href="javascript:;">JavaScript</a></dd>
+                            <dd><a href="javascript:;">U3D</a></dd>
+                            <dd><a href="javascript:;">COCOS2D-X</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a href="javascript:;">Back End</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;">Java</a></dd>
+                            <dd><a href="javascript:;">Python</a></dd>
+                            <dd><a href="javascript:;">C#</a></dd>
+                            <dd><a href="javascript:;">Linux C/C++</a></dd>
+                        </dl>
+                    </li>
+                </ul>
             </div>
         </div>
         <jsp:include page="footer.jsp" />
