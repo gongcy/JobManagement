@@ -38,7 +38,7 @@ public class StudentController {
     public String login() {
         return "stu_login";
     }
-    
+
     @RequestMapping(value = "/login.htm", method = RequestMethod.POST)
     public String validateLogin(Student stu, HttpSession session,
             @RequestParam("vcode") String vcode,
@@ -53,7 +53,7 @@ public class StudentController {
         }
         return "loginFail";
     }
-    
+
     @RequestMapping(value = "/register.htm", method = RequestMethod.GET)
     public String register() {
         return "stu_reg";
@@ -84,11 +84,13 @@ public class StudentController {
     }
 
     @RequestMapping(value = "/editResume.htm", method = RequestMethod.POST)
-    public String editResume(@RequestParam("skill") String skills) {
+    public String editResume(HttpSession session,
+            @RequestParam("skill") String skills) {
 
-        Resume resume = new Resume();
-        resume.setSkills(skills);
-
+        String id = (String) session.getAttribute("sid");
+        if (id != null) {
+            resumeService.changeResume(id, skills);
+        }
         return "stu_resume";
     }
 
@@ -98,20 +100,35 @@ public class StudentController {
     }
 
     @RequestMapping(value = "/editProfile.htm", method = RequestMethod.POST)
-    public String editProfile(@RequestParam("skill") String skills,
+    public String editProfile(HttpSession session,
             @RequestParam("email") String email, @RequestParam("stuage") String age,
             @RequestParam("stuedu") String edu) {
 
-        Resume resume = new Resume();
-        resume.setSkills(skills);
+        String id = (String) session.getAttribute("sid");
+        if (id != null) {
+            resumeService.changeProfile(id, Integer.parseInt(age), edu, email);
+        }
+        return "stu_profile";
+    }
 
+    @RequestMapping(value = "/changePassword.htm", method = RequestMethod.POST)
+    public String changePassword(HttpSession session,
+            @RequestParam("nowpass") String nowpass, @RequestParam("pass") String pass,
+            @RequestParam("repass") String repass) {
+
+        String id = (String) session.getAttribute("sid");
+        if (id != null) {
+            if (pass.equals(repass)) {
+                studentService.changePassword(id, nowpass);
+            }
+        }
         return "stu_profile";
     }
 
     @RequestMapping(value = "/aboutme.htm", method = RequestMethod.GET)
     public String viewProfile(Model model, HttpSession session) {
 
-        String id = (String) session.getAttribute("id");
+        String id = (String) session.getAttribute("sid");
 
         if (id != null) {
             Resume resume = resumeService.fetchResume(id);

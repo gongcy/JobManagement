@@ -45,4 +45,12 @@ public class StudentService {
     public Student getStudent(String stuno) {
         return studentDao.getStudent(stuno);
     }
+
+    public boolean changePassword(String stuno, String newpwd) {
+        try {
+            return studentDao.changePassword(stuno, new MD5().getMD5ofStr(newpwd));
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }

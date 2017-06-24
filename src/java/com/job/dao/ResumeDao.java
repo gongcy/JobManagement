@@ -19,10 +19,10 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class ResumeDao {
-
+    
     @Autowired
     private SessionFactory sessionFactory;
-
+    
     public void insert(Resume manager) {
         Session session = null;
         try {
@@ -39,7 +39,7 @@ public class ResumeDao {
             }
         }
     }
-
+    
     public void delete(String magno) {
         Session session = null;
         try {
@@ -57,7 +57,7 @@ public class ResumeDao {
             }
         }
     }
-
+    
     public void update(String magno) {
         Session session = null;
         try {
@@ -75,7 +75,7 @@ public class ResumeDao {
             }
         }
     }
-
+    
     public List<Resume> getResumes(String stuno) {
         Session session = null;
         List<Resume> l = null;
@@ -93,6 +93,48 @@ public class ResumeDao {
                 session.close();
             }
             return l;
+        }
+    }
+    
+    public boolean changeProfile(String sid, Integer age, String edu, String email) {
+        Session session = null;
+        Resume s = getResumes(sid).get(0);
+        try {
+            session.beginTransaction();
+            session = sessionFactory.openSession();
+            session.beginTransaction();
+            s.setAge(age);
+            s.setEducation(edu);
+            s.setEmail(email);
+        } catch (Exception e) {
+            e.printStackTrace();
+            session.getTransaction().rollback();
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+                return true;
+            }
+            return false;
+        }
+    }
+    
+    public boolean changeResume(String sid, String skills) {
+        Session session = null;
+        Resume s = getResumes(sid).get(0);
+        try {
+            session.beginTransaction();
+            session = sessionFactory.openSession();
+            session.beginTransaction();
+            s.setSkills(skills);
+        } catch (Exception e) {
+            e.printStackTrace();
+            session.getTransaction().rollback();
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+                return true;
+            }
+            return false;
         }
     }
 }

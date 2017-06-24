@@ -5,6 +5,7 @@
  */
 package com.job.dao;
 
+import com.job.encrypt.MD5;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -90,6 +91,26 @@ public class StudentDao {
                 session.close();
             }
             return s;
+        }
+    }
+
+    public boolean changePassword(String sid, String newpwd) {
+        Session session = null;
+        Student s = getStudent(sid);
+        try {
+            session.beginTransaction();
+            session = sessionFactory.openSession();
+            session.beginTransaction();
+            s.setPassword(newpwd);
+        } catch (Exception e) {
+            e.printStackTrace();
+            session.getTransaction().rollback();
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+                return true;
+            }
+            return false;
         }
     }
 

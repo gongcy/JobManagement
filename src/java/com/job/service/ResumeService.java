@@ -25,7 +25,12 @@ public class ResumeService {
         List<Resume> l = resumeDao.getResumes(stuno);
         return l.get(0);
     }
-    
-    
 
+    public boolean changeProfile(String stuno, Integer age, String edu, String email) {
+        return resumeDao.changeProfile(stuno, age, edu, email);
+    }
+
+    public boolean changeResume(String stuno, String skills) {
+        return resumeDao.changeResume(stuno, skills);
+    }
 }
