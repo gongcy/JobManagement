@@ -4,16 +4,16 @@
     Author     : Administrator
 --%>
 
-<%@page import="pojo.Manager"%>
-<%@page import="dao.ManagerDao"%>
-<%@page import="dao.StudentDao"%>
-<%@page import="pojo.Student"%>
+<%@page import="com.job.pojo.Manager"%>
+<%@page import="com.job.dao.ManagerDao"%>
+<%@page import="com.job.dao.StudentDao"%>
+<%@page import="com.job.pojo.Student"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <div class="header">
     <div class="main">
         <a class="logo" href="" title="Job-hunting">Job-hunting</a>
         <div class="nav">
-            <a class="nav-this" href="index.html">
+            <a class="nav-this" href="index.jsp">
                 <i class="iconfont icon-shouye"></i>Home
             </a>
             <a href="stu_login.html" target="_blank">
@@ -28,7 +28,7 @@
             <%
                 String sid = (String) session.getAttribute("sid");
                 String mid = (String) session.getAttribute("mid");
-
+                
                 if (sid == null && mid == null) {
             %>
             <!-- before Login -->
