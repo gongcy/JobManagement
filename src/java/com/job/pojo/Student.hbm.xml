@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 21, 2017 2:29:17 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class catalog="JobManagement" name="com.job.pojo.Student" optimistic-lock="version" schema="dbo" table="Student">
+    <id name="studentNo" type="string">
+      <column length="10" name="StudentNo"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="studentName" type="string">
+      <column length="10" name="StudentName"/>
+    </property>
+    <property name="password" type="string">
+      <column length="50" name="Password"/>
+    </property>
+    <property name="gender" type="java.lang.Character">
+      <column length="1" name="Gender"/>
+    </property>
+    <property name="resumeAmount" type="java.lang.Integer">
+      <column name="ResumeAmount"/>
+    </property>
+    <property name="status" type="string">
+      <column length="3" name="Status"/>
+    </property>
+    <property name="active" type="java.lang.Character">
+      <column length="1" name="ACTIVE"/>
+    </property>
+    <set fetch="select" inverse="true" lazy="true" name="resumes" table="Resume">
+      <key>
+        <column length="10" name="StudentNo"/>
+      </key>
+      <one-to-many class="com.job.pojo.Resume"/>
+    </set>
+    <set fetch="select" inverse="true" lazy="true" name="toEmploys" table="ToEmploy">
+      <key>
+        <column length="10" name="StudentNo"/>
+      </key>
+      <one-to-many class="com.job.pojo.ToEmploy"/>
+    </set>
+  </class>
+</hibernate-mapping>

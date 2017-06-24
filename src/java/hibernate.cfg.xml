@@ -10,12 +10,12 @@
     <property name="hibernate.show_sql">true</property>
     <property name="hibernate.current_session_context_class">thread</property>
     <property name="hibernate.query.factory_class">org.hibernate.hql.internal.classic.ClassicQueryTranslatorFactory</property>
-    <mapping resource="pojo/Student.hbm.xml"/>
-    <mapping resource="pojo/ToEmploy.hbm.xml"/>
-    <mapping resource="pojo/Company.hbm.xml"/>
-    <mapping resource="pojo/Manager.hbm.xml"/>
-    <mapping resource="pojo/Resume.hbm.xml"/>
-    <mapping resource="pojo/Recruitment.hbm.xml"/>
-    <mapping resource="pojo/Job.hbm.xml"/>
+    <mapping resource="com/job/pojo/Student.hbm.xml"/>
+    <mapping resource="com/job/pojo/ToEmploy.hbm.xml"/>
+    <mapping resource="com/job/pojo/Company.hbm.xml"/>
+    <mapping resource="com/job/pojo/Manager.hbm.xml"/>
+    <mapping resource="com/job/pojo/Resume.hbm.xml"/>
+    <mapping resource="com/job/pojo/Recruitment.hbm.xml"/>
+    <mapping resource="com/job/pojo/Job.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

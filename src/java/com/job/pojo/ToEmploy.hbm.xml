@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 21, 2017 2:29:17 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class catalog="JobManagement" name="com.job.pojo.ToEmploy" optimistic-lock="version" schema="dbo" table="ToEmploy">
+    <id name="employNo" type="string">
+      <column length="10" name="EmployNo"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="com.job.pojo.Job" fetch="select" name="job">
+      <column length="10" name="JobNo"/>
+    </many-to-one>
+    <many-to-one class="com.job.pojo.Student" fetch="select" name="student">
+      <column length="10" name="StudentNo"/>
+    </many-to-one>
+    <property name="studentName" type="string">
+      <column length="20" name="StudentName"/>
+    </property>
+    <property name="jobName" type="string">
+      <column length="50" name="JobName"/>
+    </property>
+    <property name="companyName" type="string">
+      <column length="50" name="CompanyName"/>
+    </property>
+    <property name="status" type="string">
+      <column length="3" name="Status"/>
+    </property>
+    <property name="applyTime" type="time">
+      <column length="16" name="ApplyTime"/>
+    </property>
+    <property name="expectedSalary" type="java.lang.Integer">
+      <column name="ExpectedSalary"/>
+    </property>
+  </class>
+</hibernate-mapping>

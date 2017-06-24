@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 21, 2017 2:29:17 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class catalog="JobManagement" name="com.job.pojo.Recruitment" optimistic-lock="version" schema="dbo" table="Recruitment">
+    <id name="recruitmentNo" type="string">
+      <column length="10" name="RecruitmentNo"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="com.job.pojo.Company" fetch="select" name="company">
+      <column length="10" name="CompanyNo"/>
+    </many-to-one>
+    <many-to-one class="com.job.pojo.Job" fetch="select" name="job">
+      <column length="10" name="JobNo"/>
+    </many-to-one>
+    <property name="jobName" type="string">
+      <column length="50" name="JobName"/>
+    </property>
+    <property name="jobDescription" type="string">
+      <column length="500" name="JobDescription"/>
+    </property>
+    <property name="companyName" type="string">
+      <column length="50" name="CompanyName"/>
+    </property>
+    <property name="recruitingAmout" type="java.lang.Integer">
+      <column name="RecruitingAmout"/>
+    </property>
+    <property name="skillRequired" type="string">
+      <column length="50" name="SkillRequired"/>
+    </property>
+    <property name="deadLine" type="time">
+      <column length="16" name="DeadLine"/>
+    </property>
+    <property name="type" type="java.lang.Character">
+      <column length="1" name="Type"/>
+    </property>
+    <property name="salary" type="java.lang.Integer">
+      <column name="Salary"/>
+    </property>
+  </class>
+</hibernate-mapping>

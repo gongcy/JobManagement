@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 21, 2017 2:29:17 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class catalog="JobManagement" name="com.job.pojo.Resume" optimistic-lock="version" schema="dbo" table="Resume">
+    <id name="resumeNo" type="string">
+      <column length="10" name="ResumeNo"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="com.job.pojo.Student" fetch="select" name="student">
+      <column length="10" name="StudentNo"/>
+    </many-to-one>
+    <property name="resumeName" type="string">
+      <column length="10" name="ResumeName"/>
+    </property>
+    <property name="gender" type="java.lang.Character">
+      <column length="1" name="Gender"/>
+    </property>
+    <property name="age" type="java.lang.Integer">
+      <column name="Age"/>
+    </property>
+    <property name="picPath" type="string">
+      <column length="100" name="PicPath"/>
+    </property>
+    <property name="education" type="string">
+      <column length="20" name="Education"/>
+    </property>
+    <property name="phone" type="string">
+      <column length="20" name="Phone"/>
+    </property>
+    <property name="email" type="string">
+      <column length="30" name="Email"/>
+    </property>
+    <property name="skills" type="string">
+      <column length="500" name="Skills"/>
+    </property>
+    <property name="expectedJob" type="string">
+      <column length="30" name="ExpectedJob"/>
+    </property>
+  </class>
+</hibernate-mapping>

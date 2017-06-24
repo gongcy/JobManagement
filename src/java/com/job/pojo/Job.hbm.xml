@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 21, 2017 2:29:17 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class catalog="JobManagement" name="com.job.pojo.Job" optimistic-lock="version" schema="dbo" table="Job">
+    <id name="jobNo" type="string">
+      <column length="10" name="JobNo"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="jobName" type="string">
+      <column length="20" name="JobName"/>
+    </property>
+    <property name="jobType" type="string">
+      <column length="10" name="JobType"/>
+    </property>
+    <set fetch="select" inverse="true" lazy="true" name="recruitments" table="Recruitment">
+      <key>
+        <column length="10" name="JobNo"/>
+      </key>
+      <one-to-many class="com.job.pojo.Recruitment"/>
+    </set>
+    <set fetch="select" inverse="true" lazy="true" name="toEmploys" table="ToEmploy">
+      <key>
+        <column length="10" name="JobNo"/>
+      </key>
+      <one-to-many class="com.job.pojo.ToEmploy"/>
+    </set>
+  </class>
+</hibernate-mapping>

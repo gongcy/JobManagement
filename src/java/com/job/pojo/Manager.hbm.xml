@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 21, 2017 2:29:17 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class catalog="JobManagement" name="com.job.pojo.Manager" optimistic-lock="version" schema="dbo" table="Manager">
+    <id name="managerNo" type="string">
+      <column length="10" name="ManagerNo"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="managerName" type="string">
+      <column length="20" name="ManagerName"/>
+    </property>
+    <property name="password" type="string">
+      <column length="50" name="Password"/>
+    </property>
+  </class>
+</hibernate-mapping>
