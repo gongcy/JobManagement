@@ -17,12 +17,9 @@
     </context:component-scan>
     <mvc:annotation-driven />
     
-    <!--
-    <mvc:resources mapping="/js/**" location="/WEB-INF/res/js/" />
-    <mvc:resources mapping="/css/**" location="/WEB-INF/templates/css/" />
-    <mvc:resources mapping="/images/**" location="/WEB-INF/templates/images/" />
-    -->
-    
+    <mvc:resources mapping="/res/layui/css/**" location="/WEB-INF/res/layui/css/" />
+    <mvc:resources mapping="/res/css/**" location="/WEB-INF/res/css/" />
+    <mvc:resources mapping="res/layui/**" location="/WEB-INF/res/layui/" />
     
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver">

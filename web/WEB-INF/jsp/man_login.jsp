@@ -49,6 +49,7 @@
                                         <button class="layui-btn" lay-filter="*" lay-submit>Sign In</button>
                                         <button type="reset" class="layui-btn layui-btn-primary">Reset</button>
                                     </div>
+                                    <a style="color: blue" href="../student/log.htm">Student Login</a>
                                 </form>
                             </div>
                         </div>

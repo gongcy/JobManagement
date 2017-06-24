@@ -24,13 +24,13 @@
                 <div class="content">
                     <div class="fly-tab fly-tab-index">
                         <span>
-                            <a href="jie/index.html">All</a>
-                            <a href="jie/index.html">Software Engineer</a>
-                            <a href="jie/index.html">Product</a>
-                            <a href="jie/index.html">Designer</a>
+                            <a href="">All</a>
+                            <a href="">Software Engineer</a>
+                            <a href="">Product</a>
+                            <a href="">Designer</a>
                         </span>
 
-                        <form action="http://cn.bing.com/search" class="fly-search">
+                        <form action="searchJob.htm" method="get" class="fly-search">
                             <input class="layui-input" autocomplete="off" placeholder="Search job" type="text" name="q">
                             <i class="iconfont icon-sousuo"></i>
                         </form>  
@@ -39,16 +39,88 @@
                         <dt class="fly-panel-title">Trending Jobs
                         </dt>
                         <dd>
-                            <a href="jie/detail.html">使用 layui 秒搭后台大布局（基本结构）</a>
+                            <a href="">使用 layui 秒搭后台大布局（基本结构）</a>
                             <span><i class="iconfont icon-shouye"></i> 6087</span>
                         </dd>
+                        <dd>
+                            <a href="">使用 layui 秒搭后台大布局（基本结构）</a>
+                            <span><i class="iconfont icon-shouye"></i> 6087</span>
+                        </dd>
+                        <dd>
+                            <a href="">使用 layui 秒搭后台大布局（基本结构）</a>
+                            <span><i class="iconfont icon-shouye"></i> 6087</span>
+                        </dd>
+                        <dd>
+                            <a href="">使用 layui 秒搭后台大布局（基本结构）</a>
+                            <span><i class="iconfont icon-shouye"></i> 6087</span>
+                        </dd>
+                        <dd>
+                            <a href="">使用 layui 秒搭后台大布局（基本结构）</a>
+                            <span><i class="iconfont icon-shouye"></i> 6087</span>
+                        </dd>
+                        <dd>
+                            <a href="">使用 layui 秒搭后台大布局（基本结构）</a>
+                            <span><i class="iconfont icon-shouye"></i> 6087</span>
+                        </dd><dd>
+                            <a href="">使用 layui 秒搭后台大布局（基本结构）</a>
+                            <span><i class="iconfont icon-shouye"></i> 6087</span>
+                        </dd><dd>
+                            <a href="">使用 layui 秒搭后台大布局（基本结构）</a>
+                            <span><i class="iconfont icon-shouye"></i> 6087</span>
+                        </dd>
+                        <dd>
+                            <a href="">使用 layui 秒搭后台大布局（基本结构）</a>
+                            <span><i class="iconfont icon-shouye"></i> 6087</span>
+                        </dd>
+                        <dd>
+                            <a href="">使用 layui 秒搭后台大布局（基本结构）</a>
+                            <span><i class="iconfont icon-shouye"></i> 6087</span>
+                        </dd>
+                        
                     </dl>
                     <dl class="fly-panel fly-list-one">
                         <dt class="fly-panel-title">Recently Posted</dt>
                         <dd>
-                            <a href="jie/detail.html">使用 layui 秒搭后台大布局之基本结构</a>
+                            <a href="">使用 layui 秒搭后台大布局之基本结构</a>
                             <span><i class="iconfont">&#xe60c;</i> 96</span>
                         </dd>
+                        <dd>
+                            <a href="">使用 layui 秒搭后台大布局之基本结构</a>
+                            <span><i class="iconfont">&#xe60c;</i> 96</span>
+                        </dd>
+                        <dd>
+                            <a href="">使用 layui 秒搭后台大布局之基本结构</a>
+                            <span><i class="iconfont">&#xe60c;</i> 96</span>
+                        </dd>
+                        <dd>
+                            <a href="">使用 layui 秒搭后台大布局之基本结构</a>
+                            <span><i class="iconfont">&#xe60c;</i> 96</span>
+                        </dd>
+                        <dd>
+                            <a href="">使用 layui 秒搭后台大布局之基本结构</a>
+                            <span><i class="iconfont">&#xe60c;</i> 96</span>
+                        </dd>
+                        <dd>
+                            <a href="">使用 layui 秒搭后台大布局之基本结构</a>
+                            <span><i class="iconfont">&#xe60c;</i> 96</span>
+                        </dd>
+                        <dd>
+                            <a href="">使用 layui 秒搭后台大布局之基本结构</a>
+                            <span><i class="iconfont">&#xe60c;</i> 96</span>
+                        </dd>
+                        <dd>
+                            <a href="">使用 layui 秒搭后台大布局之基本结构</a>
+                            <span><i class="iconfont">&#xe60c;</i> 96</span>
+                        </dd>
+                        <dd>
+                            <a href="">使用 layui 秒搭后台大布局之基本结构</a>
+                            <span><i class="iconfont">&#xe60c;</i> 96</span>
+                        </dd>
+                        <dd>
+                            <a href="">使用 layui 秒搭后台大布局之基本结构</a>
+                            <span><i class="iconfont">&#xe60c;</i> 96</span>
+                        </dd>
+                        
                     </dl>
 
                 </div>

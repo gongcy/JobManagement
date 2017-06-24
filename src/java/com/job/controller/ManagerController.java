@@ -45,7 +45,7 @@ public class ManagerController {
     @Autowired
     private ToEmployService toEmployService;
 
-    @RequestMapping(value = "/login.htm", method = RequestMethod.GET)
+    @RequestMapping(value = "/log.htm", method = RequestMethod.GET)
     public String login() {
         return "man_login";
     }
@@ -81,6 +81,12 @@ public class ManagerController {
 //            map.addAttribute("msg", "注册失败，该学号已经注册，请<a href='javascript:history.back();'>返回</a>重试！");
         }
         return "registerResult";
+    }
+    
+    @RequestMapping(value = "/logout.htm", method = RequestMethod.GET)
+    public String logout(HttpSession session) {
+        session.invalidate();
+        return "index";
     }
 
     @RequestMapping(value = "/report.htm", method = RequestMethod.GET)

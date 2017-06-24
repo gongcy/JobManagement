@@ -20,7 +20,7 @@
                 <div class="layui-tab layui-tab-brief">
                     <ul class="layui-tab-title">
                         <li class="layui-this">Sign In</li>
-                        <li><a href="stu_reg.jsp">Sign Up</a></li>
+                        <li><a href="reg.htm">Sign Up</a></li>
                     </ul>
                     <div class="layui-form layui-tab-content" id="LAY_ucm" style="padding: 20px 0;">
                         <div class="layui-tab-item layui-show">
@@ -48,6 +48,7 @@
                                         <button class="layui-btn" lay-filter="*" lay-submit>Sign In</button>
                                         <button type="reset" class="layui-btn layui-btn-primary">Reset</button>
                                     </div>
+                                    <a style="color: blue" href="../manager/log.htm">Manager Login</a>
                                 </form>
                             </div>
                         </div>

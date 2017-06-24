@@ -34,7 +34,7 @@ public class StudentController {
     @Autowired
     private ResumeService resumeService;
 
-    @RequestMapping(value = "/login.htm", method = RequestMethod.GET)
+    @RequestMapping(value = "/log.htm", method = RequestMethod.GET)
     public String login() {
         return "stu_login";
     }
@@ -54,13 +54,13 @@ public class StudentController {
         return "loginFail";
     }
 
-    @RequestMapping(value = "/register.htm", method = RequestMethod.GET)
+    @RequestMapping(value = "/reg.htm", method = RequestMethod.GET)
     public String register() {
         return "stu_reg";
     }
 
     @RequestMapping(value = "/register.htm", method = RequestMethod.POST)
-    public String register(@RequestParam("stuid") String stuid,
+    public String registerDo(@RequestParam("stuid") String stuid,
             @RequestParam("pass") String stupwd,
             @RequestParam("stuname") String stuname, @RequestParam("sex") Integer stusex) {
         Student s = new Student();
@@ -77,9 +77,15 @@ public class StudentController {
         }
         return "registerResult";
     }
+    
+    @RequestMapping(value = "/logout.htm", method = RequestMethod.GET)
+    public String logout(HttpSession session) {
+        session.invalidate();
+        return "index";
+    }
 
-    @RequestMapping(value = "/editResume.htm", method = RequestMethod.GET)
-    public String editResume() {
+    @RequestMapping(value = "/resume.htm", method = RequestMethod.GET)
+    public String resume() {
         return "stu_resume";
     }
 
@@ -94,8 +100,8 @@ public class StudentController {
         return "stu_resume";
     }
 
-    @RequestMapping(value = "/editProfile.htm", method = RequestMethod.GET)
-    public String editProfile() {
+    @RequestMapping(value = "/profile.htm", method = RequestMethod.GET)
+    public String profile() {
         return "stu_profile";
     }
 

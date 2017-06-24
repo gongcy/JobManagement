@@ -6,6 +6,8 @@
 package com.job.service;
 
 import com.job.dao.RecruitmentDao;
+import com.job.pojo.Recruitment;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,5 +20,9 @@ public class RecruitmentService {
     
     @Autowired
     private RecruitmentDao recruitmentDao;
+
+    public List<Recruitment> searchRecruitments(String condition) {
+        return recruitmentDao.searchRecruitments(condition);
+    }
     
 }

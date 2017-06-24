@@ -19,7 +19,7 @@
             <div class="fly-panel fly-panel-user" pad20>
                 <div class="layui-tab layui-tab-brief">
                     <ul class="layui-tab-title">
-                        <li><a href="stu_login.jsp">Sign In</a></li>
+                        <li><a href="../student/log.htm">Sign In</a></li>
                         <li class="layui-this">Sign Up</li>
                     </ul>
                     <div class="layui-form layui-tab-content" id="LAY_ucm" style="padding: 20px 0;">

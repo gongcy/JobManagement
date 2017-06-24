@@ -5,10 +5,13 @@
  */
 package com.job.dao;
 
+import com.job.pojo.Job;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.job.pojo.Recruitment;
+import java.util.List;
+import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -17,7 +20,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class RecruitmentDao {
-    
+
     @Autowired
     private SessionFactory sessionFactory;
 
@@ -90,6 +93,26 @@ public class RecruitmentDao {
                 session.close();
             }
             return m;
+        }
+    }
+
+    public List<Recruitment> searchRecruitments(String condition) {
+        Session session = null;
+        List<Recruitment> lm = null;
+        try {
+            session = sessionFactory.openSession();
+            session.beginTransaction();
+            Query q = session.createQuery("from Recruitment where jobName like '%" + condition + "%'");
+            lm = (List<Recruitment>) q.list();
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            session.getTransaction().rollback();
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+            return lm;
         }
     }
 }

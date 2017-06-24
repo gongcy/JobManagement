@@ -19,10 +19,10 @@
                     <a href="aboutme.htm"><i class="layui-icon">&#xe604;</i>About Me </a>
                 </li>
                 <li class="layui-nav-item">
-                    <a href="editResume.htm"><i class="layui-icon">&#xe612;</i>Edit Resume</a>
+                    <a href="resume.htm"><i class="layui-icon">&#xe612;</i>Edit Resume</a>
                 </li>
                 <li class="layui-nav-item layui-this">
-                    <a href="editProfile.htm"><i class="layui-icon">&#xe620;</i>Edit Profile</a>
+                    <a href="profile.htm"><i class="layui-icon">&#xe620;</i>Edit Profile</a>
                 </li>
             </ul>
 

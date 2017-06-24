@@ -38,11 +38,46 @@
                         <li>Student ToEmploy</li>
                     </ul>
                     <div class="layui-tab-content" style="padding: 20px 0;">
+
                         <div class="layui-form layui-form-pane layui-tab-item layui-show">
-                            <table>
-                                <th>No</th>
-                                <th>Name</th>
-                                <th>Type</th>
+                            <!--job CRUD section-->
+                            <form method="post" >
+                                <div class="layui-form-item">
+                                    <label for="L_jobid" class="layui-form-label">Job ID</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" id="L_jobid" name="jobid" required lay-verify="required|number" autocomplete="off" class="layui-input">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label for="L_jobname" class="layui-form-label">Job Name</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" id="L_jobname" name="jobname" required lay-verify="required" autocomplete="off" class="layui-input">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label for="L_jobtype" class="layui-form-label">Job Type</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" id="L_jobtype" name="jobntype" required lay-verify="required" autocomplete="off" class="layui-input">
+                                    </div>
+                                </div>
+
+                                <div class="layui-form-item">
+                                    <button class="layui-btn" lay-filter="*" lay-submit>Add</button>
+                                    <button type="reset" class="layui-btn layui-btn-primary">Reset</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="layui-form layui-form-pane layui-tab-item layui-show">
+                            <table class="layui-table" lay-even lay-skin="nob">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Name</th>
+                                        <th>Type</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
                                 <c:forEach items="${lj}" var="job">
                                     <tr>
                                         <td>${job.jobNo}</td>
@@ -50,18 +85,24 @@
                                         <td>${job.jobType}</td>
                                     </tr>
                                 </c:forEach>
+                                </tbody>
                             </table>
                         </div>
                         <div class="layui-form layui-form-pane layui-tab-item">
-                            <table>
-                                <th>Employ No</th>
-                                <th>Student Name</th>
-                                <th>Job Name</th>
-                                <th>Company Name</th>
-                                <th>Active</th>
-                                <th>Status</th>
-                                <th>Apply Time</th>
-                                <th>Expected Salary</th>
+                            <table class="layui-table" lay-even lay-skin="nob">
+                                <thead>
+                                    <tr>
+                                        <th>Employ No</th>
+                                        <th>Student Name</th>
+                                        <th>Job Name</th>
+                                        <th>Company Name</th>
+                                        <th>Active</th>
+                                        <th>Status</th>
+                                        <th>Apply Time</th>
+                                        <th>Expected Salary</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
                                 <c:forEach items="${lemp}" var="emp">
                                     <tr>
                                         <td>${emp.employNo}</td>
@@ -73,6 +114,7 @@
                                         <td>${emp.expectedSalary}</td>
                                     </tr>
                                 </c:forEach>
+                                </tbody>
                             </table>
                         </div>
                     </div>

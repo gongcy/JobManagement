@@ -13,13 +13,14 @@
     <div class="main">
         <a class="logo" href="" title="Job-hunting">Job-hunting</a>
         <div class="nav">
-            <a class="nav-this" href="index.jsp">
+            <!--class="nav-this"-->
+            <a href="index.htm">
                 <i class="iconfont icon-shouye"></i>Home
             </a>
-            <a href="stu_login.html" target="_blank">
+            <a href="search.htm">
                 <i class="iconfont icon-liulanyanjing"></i>Find a job     
             </a>
-            <a href="man_login.html" target="_blank">
+            <a href="postJob.htm">
                 <i class="iconfont icon-tianjia"></i>Post a job
             </a>
         </div>
@@ -32,8 +33,8 @@
                 if (sid == null && mid == null) {
             %>
             <!-- before Login -->
-            <a class="unlogin" href="user/login.html"><i class="iconfont icon-touxiang"></i></a>
-            <span><a href="user/login.html">Login</a><a href="user/reg.html">Register</a></span>
+            <a class="unlogin" href="student/log.htm"><i class="iconfont icon-touxiang"></i></a>
+            <span><a href="student/log.htm">Login</a><a href="student/reg.htm">Register</a></span>
 
             <%
             } else if (sid != null) {
@@ -41,14 +42,14 @@
                 Student s = studentDao.getStudent(sid);
             %>
             <!-- Student Login -->
-            <a class="avatar" href="stu_profile.jsp">
+            <a class="avatar" href="student/aboutme.htm">
                 <img src="">
                 <cite><%=s.getStudentName()%></cite>
                 <i>Student</i>
             </a>
             <div class="nav">
-                <a href="/student/set/"><i class="iconfont icon-shezhi"></i>Settings</a>
-                <a href="/student/logout/"><i class="iconfont icon-tuichu" style="top: 0; font-size: 22px;"></i>Log Out</a>
+                <a href="student/"><i class="iconfont icon-shezhi"></i>Settings</a>
+                <a href="student/logout.htm"><i class="iconfont icon-tuichu" style="top: 0; font-size: 22px;"></i>Log Out</a>
             </div> 
 
             <%
@@ -57,14 +58,14 @@
                 Manager m = managerDao.getManager(mid);
             %>
             <!--Manager Login-->
-            <a class="avatar" href="man_profile.jsp">
+            <a class="avatar" href="">
                 <img src="http://tp4.sinaimg.cn/1345566427/180/5730976522/0">
                 <cite><%=m.getManagerName()%></cite>
                 <i>Manager</i>
             </a>
             <div class="nav">
-                <a href="/manager/set/"><i class="iconfont icon-shezhi"></i>Settings</a>
-                <a href="/manager/logout/"><i class="iconfont icon-tuichu" style="top: 0; font-size: 22px;"></i>Log Out</a>
+                <!--<a href="manager/set/"><i class="iconfont icon-shezhi"></i>Settings</a>-->
+                <a href="manager/logout.htm"><i class="iconfont icon-tuichu" style="top: 0; font-size: 22px;"></i>Log Out</a>
             </div> 
             <%
                 }

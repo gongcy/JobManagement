@@ -40,23 +40,29 @@
                     </ul>
                     <div class="layui-tab-content" style="padding: 20px 0;">
                         <div class="layui-form layui-form-pane layui-tab-item layui-show">
-                            <table>
-                                <th>No</th>
-                                <th>Name</th>
-                                <th>Gender</th>
-                                <th>Status</th>
-                                <th>Active</th>
-                                <c:forEach items="${ls}" var="stu">
+                            <table class="layui-table" lay-even lay-skin="nob">
+                                <thead>
                                     <tr>
-                                        <td>${stu.studentNo}</td>
-                                        <td>${stu.studentName}</td>
-                                        <td>${stu.gender}</td>
-                                        <td>${stu.status}</td>
-                                        <td>${stu.active}</td>
+                                        <th>No</th>
+                                        <th>Name</th>
+                                        <th>Gender</th>
+                                        <th>Status</th>
+                                        <th>Active</th>
                                     </tr>
-                                </c:forEach>
+                                </thead>
+                                <tbody>
+                                    <c:forEach items="${ls}" var="stu">
+                                        <tr>
+                                            <td>${stu.studentNo}</td>
+                                            <td>${stu.studentName}</td>
+                                            <td>${stu.gender}</td>
+                                            <td>${stu.status}</td>
+                                            <td>${stu.active}</td>
+                                        </tr>
+                                    </c:forEach>
+                                </tbody>
                             </table>
-                            
+
                         </div>
                         <div class="layui-form layui-form-pane layui-tab-item">
                             <form method="post" action="register.htm">
