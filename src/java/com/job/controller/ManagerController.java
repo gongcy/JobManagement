@@ -23,6 +23,7 @@ import java.util.List;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import com.job.pojo.ToEmploy;
+import org.springframework.web.bind.support.SessionStatus;
 
 /**
  *
@@ -84,9 +85,10 @@ public class ManagerController {
     }
 
     @RequestMapping(value = "/logout.htm", method = RequestMethod.GET)
-    public String logout(HttpSession session) {
+    public String logout(HttpSession session, SessionStatus sessionStatus) {
         session.invalidate();
-        return "index";
+        sessionStatus.setComplete();
+        return "redirect:../index.htm";
     }
 
     @RequestMapping(value = "/report.htm", method = RequestMethod.GET)

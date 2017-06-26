@@ -19,6 +19,7 @@ import com.job.service.StudentService;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 
 /**
  *
@@ -88,9 +89,10 @@ public class StudentController {
     }
 
     @RequestMapping(value = "/logout.htm", method = RequestMethod.GET)
-    public String logout(HttpSession session) {
+    public String logout(HttpSession session, SessionStatus sessionStatus) {
         session.invalidate();
-        return "stu_login";
+        sessionStatus.setComplete();
+        return "redirect:../index.htm";
     }
 
     @RequestMapping(value = "/resume.htm", method = RequestMethod.GET)
