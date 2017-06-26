@@ -10,13 +10,13 @@
         <a class="logo" href="" title="Job-hunting">Job-hunting</a>
         <div class="nav">
             <!--class="nav-this"-->
-            <a href="../index.htm">
+            <a href="${pageContext.request.contextPath}/index.htm">
                 <i class="iconfont icon-shouye"></i>Home
             </a>
-            <a href="../search.htm">
+            <a href="${pageContext.request.contextPath}/search.htm">
                 <i class="iconfont icon-liulanyanjing"></i>Find a job     
             </a>
-            <a href="../postJob.htm">
+            <a href="${pageContext.request.contextPath}/postJob.htm">
                 <i class="iconfont icon-tianjia"></i>Post a job
             </a>
         </div>
@@ -29,21 +29,21 @@
                 if (sid == null && mid == null) {
             %>
             <!-- before Login -->
-            <a class="unlogin" href="../student/log.htm"><i class="iconfont icon-touxiang"></i></a>
-            <span><a href="../student/log.htm">Login</a><a href="../student/reg.htm">Register</a></span>
+            <a class="unlogin" href="${pageContext.request.contextPath}/student/log.htm"><i class="iconfont icon-touxiang"></i></a>
+            <span><a href="${pageContext.request.contextPath}/student/log.htm">Login</a><a href="${pageContext.request.contextPath}/student/reg.htm">Register</a></span>
 
             <%
             } else if (sid != null) {
             %>
             <!-- Student Login -->
-            <a class="avatar" href="../student/aboutme.htm">
+            <a class="avatar" href="${pageContext.request.contextPath}/student/aboutme.htm">
                 <img src="">
                 <cite><%=sid%></cite>
                 <i>Student</i>
             </a>
             <div class="nav">
-                <a href="../student/profile.htm"><i class="iconfont icon-shezhi"></i>Settings</a>
-                <a href="../student/logout.htm"><i class="iconfont icon-tuichu" style="top: 0; font-size: 22px;"></i>Log Out</a>
+                <a href="${pageContext.request.contextPath}/student/profile.htm"><i class="iconfont icon-shezhi"></i>Settings</a>
+                <a href="${pageContext.request.contextPath}/student/logout.htm"><i class="iconfont icon-tuichu" style="top: 0; font-size: 22px;"></i>Log Out</a>
             </div> 
 
             <%
@@ -57,7 +57,7 @@
             </a>
             <div class="nav">
                 <!--<a href="manager/set/"><i class="iconfont icon-shezhi"></i>Settings</a>-->
-                <a href="../manager/logout.htm"><i class="iconfont icon-tuichu" style="top: 0; font-size: 22px;"></i>Log Out</a>
+                <a href="${pageContext.request.contextPath}/manager/logout.htm"><i class="iconfont icon-tuichu" style="top: 0; font-size: 22px;"></i>Log Out</a>
             </div> 
             <%
                 }

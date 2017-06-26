@@ -17,7 +17,7 @@
 
     <body>
 
-        <jsp:include page=".../../header.jsp" />
+        <jsp:include page="header.jsp" />
 
         <div class="main layui-clear">
 
@@ -30,7 +30,7 @@
                     <div class="layui-form layui-tab-content" id="LAY_ucm" style="padding: 20px 0;">
                         <div class="layui-tab-item layui-show">
                             <div class="layui-form layui-form-pane">
-                                <form method="post" action="login.htm">
+                                <form method="post" action="${pageContext.request.contextPath}/student/login.htm">
                                     <div class="layui-form-item">
                                         <label for="L_stuid" class="layui-form-label">Student ID</label>
                                         <div class="layui-input-inline">
@@ -56,7 +56,7 @@
                                         <button class="layui-btn" lay-filter="*" lay-submit>Sign In</button>
                                         <button type="reset" class="layui-btn layui-btn-primary">Reset</button>
                                     </div>
-                                    <a style="color: blue" href="../manager/log.htm">Manager Login</a>
+                                    <a style="color: blue" href="${pageContext.request.contextPath}/manager/log.htm">Manager Login</a>
                                 </form>
                             </div>
                         </div>
@@ -66,7 +66,7 @@
 
         </div>
 
-        <jsp:include page="../../footer.jsp" />
+        <jsp:include page="footer.jsp" />
         <script src="../res/layui/layui.js"></script>
         <script>
                         layui.use(['element', 'form'], function () {

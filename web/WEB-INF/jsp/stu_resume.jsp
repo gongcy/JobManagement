@@ -12,17 +12,17 @@
     </head>
 
     <body>
-        <jsp:include page="../../header.jsp" />
+        <jsp:include page="header.jsp" />
         <div class="main fly-user-main layui-clear">
             <ul class="layui-nav layui-nav-tree layui-inline" lay-filter="user">
                 <li class="layui-nav-item">
-                    <a href="aboutme.htm"><i class="layui-icon">&#xe604;</i>About Me </a>
+                    <a href="${pageContext.request.contextPath}/student/aboutme.htm"><i class="layui-icon">&#xe604;</i>About Me </a>
                 </li>
                 <li class="layui-nav-item layui-this">
-                    <a href="resume.htm"><i class="layui-icon">&#xe612;</i>Edit Resume</a>
+                    <a href="${pageContext.request.contextPath}/student/resume.htm"><i class="layui-icon">&#xe612;</i>Edit Resume</a>
                 </li>
                 <li class="layui-nav-item">
-                    <a href="profile.htm"><i class="layui-icon">&#xe620;</i>Edit Profile</a>
+                    <a href="${pageContext.request.contextPath}/student/profile.htm"><i class="layui-icon">&#xe620;</i>Edit Profile</a>
                 </li>
             </ul>
 
@@ -38,7 +38,7 @@
                     </ul>
                     <div class="layui-tab-content" style="padding: 20px 0;">
                         <div class="layui-form layui-form-pane layui-tab-item layui-show">
-                            <form method="POST" action="student/editResume.htm">
+                            <form method="POST" action="${pageContext.request.contextPath}/student/editResume.htm">
                                 <div class="layui-form-item layui-form-text">
                                     <label for="L_skill" class="layui-form-label">Skill</label>
                                     <div class="layui-input-block">
@@ -62,7 +62,7 @@
                 </div>
             </div>
         </div>
-        <jsp:include page="../../footer.jsp" />
+        <jsp:include page="footer.jsp" />
         <script src="../res/layui/layui.js"></script>
         <script>
             layui.use(['element', 'form'], function () {

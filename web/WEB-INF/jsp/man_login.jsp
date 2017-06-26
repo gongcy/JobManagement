@@ -1,4 +1,3 @@
-<%@page import="com.job.pojo.Manager"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
@@ -24,7 +23,7 @@
 
     <body>
 
-        <jsp:include page="../../header.jsp" />
+        <jsp:include page="header.jsp" />
 
         <div class="main layui-clear">
 
@@ -62,7 +61,7 @@
                                         <button class="layui-btn" lay-filter="*" lay-submit>Sign In</button>
                                         <button type="reset" class="layui-btn layui-btn-primary">Reset</button>
                                     </div>
-                                    <a style="color: blue" href="../student/log.htm">Student Login</a>
+                                    <a style="color: blue" href="${pageContext.request.contextPath}/student/log.htm">Student Login</a>
                                 </form>
                             </div>
                         </div>
@@ -72,15 +71,15 @@
 
         </div>
 
-        <jsp:include page="../../footer.jsp" />
+        <jsp:include page="footer.jsp" />
         <script src="../res/layui/layui.js"></script>
         <script>
-                        layui.use(['element', 'form'], function () {
-                            //import element module
-                            var element = layui.element();
-                            //import form module
-                            var form = layui.form();
-                        });
+                                            layui.use(['element', 'form'], function () {
+                                                //import element module
+                                                var element = layui.element();
+                                                //import form module
+                                                var form = layui.form();
+                                            });
         </script>
 
     </body>

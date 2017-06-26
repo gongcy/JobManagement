@@ -12,11 +12,11 @@
     </head>
 
     <body>
-        <jsp:include page="../../header.jsp" />
+        <jsp:include page="header.jsp" />
         <div class="main fly-user-main layui-clear">
             <ul class="layui-nav layui-nav-tree layui-inline">
                 <li class="layui-nav-item ">
-                    <a href="job.htm"><i class="layui-icon">&#xe604;</i>Job Management</a>
+                    <a href="${pageContext.request.contextPath}/manager/job.htm"><i class="layui-icon">&#xe604;</i>Job Management</a>
                 </li>
                 <li class="layui-nav-item">
                     <a href="user.htm"><i class="layui-icon">&#xe612;</i>User Management</a>
@@ -52,7 +52,7 @@
                 </div>
             </div>
         </div>
-        <jsp:include page="../../footer.jsp" />
+        <jsp:include page="footer.jsp" />
 
         <script src="../res/layui/layui.js"></script>
         <script>

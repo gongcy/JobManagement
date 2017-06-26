@@ -13,18 +13,18 @@
     </head>
 
     <body>
-        <jsp:include page="../../header.jsp" />
+        <jsp:include page="../header.jsp" />
         <div class="main fly-user-main layui-clear">
             <ul class="layui-nav layui-nav-tree layui-inline">
                 <li class="layui-nav-item layui-this">
-                    <a href="job.htm"><i class="layui-icon">&#xe604;</i>Job Management</a>
+                    <a href="${pageContext.request.contextPath}/manager/job.htm"><i class="layui-icon">&#xe604;</i>Job Management</a>
                 </li>
                 <li class="layui-nav-item">
-                    <a href="studentDetails.htm"><i class="layui-icon">&#xe612;</i>User Management</a>
+                    <a href="${pageContext.request.contextPath}/manager/studentDetails.htm"><i class="layui-icon">&#xe612;</i>User Management</a>
                 </li>
-<!--                <li class="layui-nav-item ">
-                    <a href="report.htm"><i class="layui-icon">&#xe620;</i>Report Management</a>
-                </li>-->
+                <li class="layui-nav-item ">
+                    <a href="${pageContext.request.contextPath}/manager/report.htm"><i class="layui-icon">&#xe620;</i>Report Management</a>
+                </li>
             </ul>
 
             <div class="site-tree-mobile layui-hide">
@@ -42,7 +42,7 @@
 
                         <div class="layui-form layui-form-pane layui-tab-item layui-show">
                             <!--job CRUD section-->
-                            <form method="post" action="addJob.htm">
+                            <form method="post" action="${pageContext.request.contextPath}/addJob.htm">
                                 <div class="layui-form-item">
                                     <label for="L_jobid" class="layui-form-label">Job ID</label>
                                     <div class="layui-input-inline">
@@ -122,7 +122,7 @@
                 </div>
             </div>
         </div>
-        <jsp:include page="../../footer.jsp" />
+        <jsp:include page="../footer.jsp" />
         <script src="../res/layui/layui.js"></script>
         <script>
             layui.use('element', function () {

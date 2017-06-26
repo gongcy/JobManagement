@@ -8,6 +8,6 @@
 <div class="footer">
     <p><a href="">In Need Job-hunting</a> 2017 &copy; <a href="">In Need</a></p>
     <p>
-        Our Team Memebers: Regan, Isaac, Kevin, Jack
+        Our Team Memebers: Regan, Issac, Kevin, Jack
     </p>
 </div>

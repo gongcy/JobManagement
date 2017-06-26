@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="res/css/global.css">
     </head>
     <body>
-        <jsp:include page="../../header.jsp" />
+        <jsp:include page="header.jsp" />
         <div class="main layui-clear">
             <div class="wrap">
                 <div class="content">
@@ -27,7 +27,7 @@
                             <a href="">Product</a>
                             <a href="">Designer</a>
                         </span>
-                        <form action="searchJob.htm" method="get" class="fly-search">
+                        <form action="${pageContext.request.contextPath}/searchJob.htm" method="get" class="fly-search">
                             <input class="layui-input" autocomplete="off" placeholder="Search job" type="text" name="q">
                             <i class="iconfont icon-sousuo"></i>
                         </form>
@@ -61,7 +61,7 @@
                 </div>
             </div>
         </div>
-        <jsp:include page="../../footer.jsp" />
+        <jsp:include page="footer.jsp" />
         <script src="res/layui/layui.js"></script>
         <script>
             layui.use('element', function () {

@@ -15,6 +15,8 @@
     </context:component-scan>
     <mvc:annotation-driven />
     
+    <mvc:default-servlet-handler/>
+    
     <mvc:resources mapping="/res/layui/css/**" location="/WEB-INF/res/layui/css/" />
     <mvc:resources mapping="/res/css/**" location="/WEB-INF/res/css/" />
     <mvc:resources mapping="res/layui/**" location="/WEB-INF/res/layui/" />

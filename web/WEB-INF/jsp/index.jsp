@@ -30,7 +30,7 @@
                             <a href="">Designer</a>
                         </span>
 
-                        <form action="searchJob.htm" method="get" class="fly-search">
+                        <form action="${pageContext.request.contextPath}/searchJob.htm" method="get" class="fly-search">
                             <input class="layui-input" autocomplete="off" placeholder="Search job" type="text" name="q">
                             <i class="iconfont icon-sousuo"></i>
                         </form>  
