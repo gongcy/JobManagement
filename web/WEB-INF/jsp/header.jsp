@@ -3,7 +3,7 @@
     Created on : Jun 18, 2017, 9:29:00 PM
     Author     : Administrator
 --%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <div class="header">
     <div class="main">
@@ -22,46 +22,37 @@
         </div>
 
         <div class="nav-user">
-            <%
-                String sid = (String) session.getAttribute("sid");
-                String mid = (String) session.getAttribute("mid");
+            <c:if test="${sessionScope.sid == null && sessionScope.mid == null}">
+                <!-- before Login -->
+                <a class="unlogin" href="${pageContext.request.contextPath}/student/log.htm"><i class="iconfont icon-touxiang"></i></a>
+                <span><a href="${pageContext.request.contextPath}/student/log.htm">Login</a><a href="${pageContext.request.contextPath}/student/reg.htm">Register</a></span>
+            </c:if>
 
-                if (sid == null && mid == null) {
-            %>
-            <!-- before Login -->
-            <a class="unlogin" href="${pageContext.request.contextPath}/student/log.htm"><i class="iconfont icon-touxiang"></i></a>
-            <span><a href="${pageContext.request.contextPath}/student/log.htm">Login</a><a href="${pageContext.request.contextPath}/student/reg.htm">Register</a></span>
+            <c:if test="${sessionScope.sid != null}">
+                <!-- Student Login -->
+                <a class="avatar" href="${pageContext.request.contextPath}/student/aboutme.htm">
+                    <img src="">
+                    <cite>${sessionScope.sid}</cite>
+                    <i>Student</i>
+                </a>
+                <div class="nav">
+                    <a href="${pageContext.request.contextPath}/student/profile.htm"><i class="iconfont icon-shezhi"></i>Settings</a>
+                    <a href="${pageContext.request.contextPath}/student/logout.htm"><i class="iconfont icon-tuichu" style="top: 0; font-size: 22px;"></i>Log Out</a>
+                </div> 
+            </c:if>
 
-            <%
-            } else if (sid != null) {
-            %>
-            <!-- Student Login -->
-            <a class="avatar" href="${pageContext.request.contextPath}/student/aboutme.htm">
-                <img src="">
-                <cite><%=sid%></cite>
-                <i>Student</i>
-            </a>
-            <div class="nav">
-                <a href="${pageContext.request.contextPath}/student/profile.htm"><i class="iconfont icon-shezhi"></i>Settings</a>
-                <a href="${pageContext.request.contextPath}/student/logout.htm"><i class="iconfont icon-tuichu" style="top: 0; font-size: 22px;"></i>Log Out</a>
-            </div> 
-
-            <%
-            } else {
-            %>
-            <!--Manager Login-->
-            <a class="avatar" href="">
-                <img src="../res/images/avatar/default.png">
-                <cite><%=mid%></cite>
-                <i>Manager</i>
-            </a>
-            <div class="nav">
-                <!--<a href="manager/set/"><i class="iconfont icon-shezhi"></i>Settings</a>-->
-                <a href="${pageContext.request.contextPath}/manager/logout.htm"><i class="iconfont icon-tuichu" style="top: 0; font-size: 22px;"></i>Log Out</a>
-            </div> 
-            <%
-                }
-            %>
+            <c:if test="${sessionScope.mid != null}">
+                <!--Manager Login-->
+                <a class="avatar" href="">
+                    <img src="../res/images/avatar/default.png">
+                    <cite>${sessionScope.mid}</cite>
+                    <i>Manager</i>
+                </a>
+                <div class="nav">
+                    <!--<a href="manager/set/"><i class="iconfont icon-shezhi"></i>Settings</a>-->
+                    <a href="${pageContext.request.contextPath}/manager/logout.htm"><i class="iconfont icon-tuichu" style="top: 0; font-size: 22px;"></i>Log Out</a>
+                </div>
+            </c:if>
         </div>
     </div>
 </div>

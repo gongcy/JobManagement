@@ -20,11 +20,11 @@
                     <a href="${pageContext.request.contextPath}/manager/job.htm"><i class="layui-icon">&#xe604;</i>Job Management</a>
                 </li>
                 <li class="layui-nav-item layui-this">
-                    <a href="studentDetails.htm"><i class="layui-icon">&#xe612;</i>User Management</a>
+                    <a href="${pageContext.request.contextPath}/manager/studentDetails.htm"><i class="layui-icon">&#xe612;</i>User Management</a>
                 </li>
-<!--                <li class="layui-nav-item ">
-                    <a href="report.htm"><i class="layui-icon">&#xe620;</i>Report Management</a>
-                </li>-->
+                <li class="layui-nav-item ">
+                    <a href="${pageContext.request.contextPath}/manager/report.htm"><i class="layui-icon">&#xe620;</i>Report Management</a>
+                </li>
             </ul>
 
             <div class="site-tree-mobile layui-hide">

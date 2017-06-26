@@ -53,7 +53,7 @@
                                         <div class="layui-input-inline">
                                             <input type="password" id="L_vcode" name="vcode" required lay-verify="required|number" autocomplete="off" class="layui-input">
                                         </div>
-                                        <img src="../vcode.jsp" id="getCode"/> 
+                                        <img src="vcode.jsp" id="getCode"/> 
                                         <a href="#" onclick="javasrcipt:validateCode()">Change another</a>  
                                         <br/>
                                     </div>
