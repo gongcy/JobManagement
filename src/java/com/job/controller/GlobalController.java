@@ -48,7 +48,7 @@ public class GlobalController {
     @RequestMapping(value = "/postJob.htm", method = RequestMethod.GET)
     public String postJob() {
         
-        return "search";
+        return "man_log";
     }
     
 }

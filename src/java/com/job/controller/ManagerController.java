@@ -55,14 +55,14 @@ public class ManagerController {
             @RequestParam("vcode") String vcode, @RequestParam("manid") String magid,
             @RequestParam("pass") String magpwd) {
         if (!session.getAttribute("rand").equals(vcode)) {
-            return "loginFail";
+            return "man_login";
         }
         Manager m = managerService.validateManager(magid, magpwd);
         if (m != null) {
             session.setAttribute("mid", magid);
-            return "loginSuccess";
+            return "man_job";
         }
-        return "loginFail";
+        return "man_login";
     }
 
     @RequestMapping(value = "/register.htm", method = RequestMethod.POST)
@@ -80,9 +80,9 @@ public class ManagerController {
         } else {
 //            map.addAttribute("msg", "注册失败，该学号已经注册，请<a href='javascript:history.back();'>返回</a>重试！");
         }
-        return "registerResult";
+        return "man_user";
     }
-    
+
     @RequestMapping(value = "/logout.htm", method = RequestMethod.GET)
     public String logout(HttpSession session) {
         session.invalidate();
@@ -99,15 +99,14 @@ public class ManagerController {
         return "man_user";
     }
 
-    @RequestMapping(value = "/studentDetails.htm", method = RequestMethod.POST)
-    public String studentDetails(Model model, HttpSession session) {
+    @RequestMapping(value = "/studentDetails.htm", method = RequestMethod.GET)
+    public String studentDetails(Model model) {
 
-        String id = (String) session.getAttribute("mid");
-
-        if (id != null) {
-            List<Student> ls = studentService.getAllStudents();
-            model.addAttribute("ls", ls);
-        }
+//        String id = (String) session.getAttribute("mid");
+//        if (id != null) {
+        List<Student> ls = studentService.getAllStudents();
+        model.addAttribute("ls", ls);
+//        }
         return "man_user";
     }
 
@@ -115,11 +114,28 @@ public class ManagerController {
     public String job(Model model) {
 
         List<Job> lj = jobService.getAllJobs();
+//        System.out.println("====================");
+//        System.out.println(lj.get(0).getJobName());
         model.addAttribute("lj", lj);
 
         List<ToEmploy> le = toEmployService.getAllToEmploys();
         model.addAttribute("lemp", le);
-        
+
+        return "man_job";
+    }
+
+    @RequestMapping(value = "/addJob.htm", method = RequestMethod.POST)
+    public String addJob(Model model,
+            @RequestParam("jobid") String jobid,
+            @RequestParam("jobname") String jobname,
+            @RequestParam("jobtype") String jobtype) {
+
+        Job job = new Job();
+        job.setJobName(jobname);
+        job.setJobNo(jobid);
+        job.setJobType(jobtype);
+        jobService.insertJob(job);
+
         return "man_job";
     }
 

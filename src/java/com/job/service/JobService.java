@@ -22,7 +22,14 @@ public class JobService {
     private JobDao jobDao;
 
     public List<Job> getAllJobs() {
-        return jobDao.getAllJobs();
+        List<Job> j = jobDao.getAllJobs();
+//        System.out.println("====================");
+//        System.out.println(j);
+        return j;
     }
 
+    public boolean insertJob(Job job) {
+        jobDao.insert(job);
+        return true;
+    }
 }

@@ -9,6 +9,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.job.pojo.Resume;
+import com.job.pojo.Student;
 import java.util.List;
 import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
@@ -98,8 +99,9 @@ public class ResumeDao {
     
     public boolean changeProfile(String sid, Integer age, String edu, String email) {
         Session session = null;
-        Resume s = getResumes(sid).get(0);
+        
         try {
+            Resume s = getResumes(sid).get(0);
             session.beginTransaction();
             session = sessionFactory.openSession();
             session.beginTransaction();
@@ -137,4 +139,5 @@ public class ResumeDao {
             return false;
         }
     }
+    
 }

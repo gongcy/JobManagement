@@ -1,4 +1,3 @@
-<%@page import="com.job.pojo.Manager"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
@@ -13,8 +12,8 @@
         <meta charset="utf-8">
         <title>Manager|Log In</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <link rel="stylesheet" href="../res/layui/css/layui.css">
-        <link rel="stylesheet" href="../res/css/global.css">
+        <link rel="stylesheet" href="res/layui/css/layui.css">
+        <link rel="stylesheet" href="res/css/global.css">
         <script language="javascript" type="text/javascript">
             function validateCode() {
                 document.getElementById('getCode').src = "../vcode.jsp?" + Math.ceil(Math.random() * 1000);
@@ -54,7 +53,7 @@
                                         <div class="layui-input-inline">
                                             <input type="password" id="L_vcode" name="vcode" required lay-verify="required|number" autocomplete="off" class="layui-input">
                                         </div>
-                                        <img src="../vcode.jsp" id="getCode"/> 
+                                        <img src="vcode.jsp" id="getCode"/> 
                                         <a href="#" onclick="javasrcipt:validateCode()">Change another</a>  
                                         <br/>
                                     </div>
@@ -73,7 +72,7 @@
         </div>
 
         <jsp:include page="../../footer.jsp" />
-        <script src="../res/layui/layui.js"></script>
+        <script src="res/layui/layui.js"></script>
         <script>
                         layui.use(['element', 'form'], function () {
                             //import element module

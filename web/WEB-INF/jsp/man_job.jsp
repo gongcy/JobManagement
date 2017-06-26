@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 
@@ -19,11 +20,11 @@
                     <a href="job.htm"><i class="layui-icon">&#xe604;</i>Job Management</a>
                 </li>
                 <li class="layui-nav-item">
-                    <a href="user.htm"><i class="layui-icon">&#xe612;</i>User Management</a>
+                    <a href="studentDetails.htm"><i class="layui-icon">&#xe612;</i>User Management</a>
                 </li>
-                <li class="layui-nav-item ">
+<!--                <li class="layui-nav-item ">
                     <a href="report.htm"><i class="layui-icon">&#xe620;</i>Report Management</a>
-                </li>
+                </li>-->
             </ul>
 
             <div class="site-tree-mobile layui-hide">
@@ -41,7 +42,7 @@
 
                         <div class="layui-form layui-form-pane layui-tab-item layui-show">
                             <!--job CRUD section-->
-                            <form method="post" >
+                            <form method="post" action="addJob.htm">
                                 <div class="layui-form-item">
                                     <label for="L_jobid" class="layui-form-label">Job ID</label>
                                     <div class="layui-input-inline">
@@ -57,7 +58,7 @@
                                 <div class="layui-form-item">
                                     <label for="L_jobtype" class="layui-form-label">Job Type</label>
                                     <div class="layui-input-inline">
-                                        <input type="text" id="L_jobtype" name="jobntype" required lay-verify="required" autocomplete="off" class="layui-input">
+                                        <input type="text" id="L_jobtype" name="jobtype" required lay-verify="required" autocomplete="off" class="layui-input">
                                     </div>
                                 </div>
 

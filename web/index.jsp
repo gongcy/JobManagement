@@ -38,89 +38,19 @@
                     <dl class="fly-panel fly-list-one">
                         <dt class="fly-panel-title">Trending Jobs
                         </dt>
-                        <dd>
-                            <a href="">使用 layui 秒搭后台大布局（基本结构）</a>
-                            <span><i class="iconfont icon-shouye"></i> 6087</span>
-                        </dd>
-                        <dd>
-                            <a href="">使用 layui 秒搭后台大布局（基本结构）</a>
-                            <span><i class="iconfont icon-shouye"></i> 6087</span>
-                        </dd>
-                        <dd>
-                            <a href="">使用 layui 秒搭后台大布局（基本结构）</a>
-                            <span><i class="iconfont icon-shouye"></i> 6087</span>
-                        </dd>
-                        <dd>
-                            <a href="">使用 layui 秒搭后台大布局（基本结构）</a>
-                            <span><i class="iconfont icon-shouye"></i> 6087</span>
-                        </dd>
-                        <dd>
-                            <a href="">使用 layui 秒搭后台大布局（基本结构）</a>
-                            <span><i class="iconfont icon-shouye"></i> 6087</span>
-                        </dd>
-                        <dd>
-                            <a href="">使用 layui 秒搭后台大布局（基本结构）</a>
-                            <span><i class="iconfont icon-shouye"></i> 6087</span>
-                        </dd><dd>
-                            <a href="">使用 layui 秒搭后台大布局（基本结构）</a>
-                            <span><i class="iconfont icon-shouye"></i> 6087</span>
-                        </dd><dd>
-                            <a href="">使用 layui 秒搭后台大布局（基本结构）</a>
-                            <span><i class="iconfont icon-shouye"></i> 6087</span>
-                        </dd>
-                        <dd>
-                            <a href="">使用 layui 秒搭后台大布局（基本结构）</a>
-                            <span><i class="iconfont icon-shouye"></i> 6087</span>
-                        </dd>
-                        <dd>
-                            <a href="">使用 layui 秒搭后台大布局（基本结构）</a>
-                            <span><i class="iconfont icon-shouye"></i> 6087</span>
-                        </dd>
-                        
+                        <dd>Java Developer Baidu </dd>
+                        <dd>Java Developer Baidu </dd>
+                        <dd>Java Developer Baidu </dd>
+                        <dd>Java Developer Baidu </dd>
+                        <dd>Java Developer Baidu </dd>
                     </dl>
                     <dl class="fly-panel fly-list-one">
                         <dt class="fly-panel-title">Recently Posted</dt>
-                        <dd>
-                            <a href="">使用 layui 秒搭后台大布局之基本结构</a>
-                            <span><i class="iconfont">&#xe60c;</i> 96</span>
-                        </dd>
-                        <dd>
-                            <a href="">使用 layui 秒搭后台大布局之基本结构</a>
-                            <span><i class="iconfont">&#xe60c;</i> 96</span>
-                        </dd>
-                        <dd>
-                            <a href="">使用 layui 秒搭后台大布局之基本结构</a>
-                            <span><i class="iconfont">&#xe60c;</i> 96</span>
-                        </dd>
-                        <dd>
-                            <a href="">使用 layui 秒搭后台大布局之基本结构</a>
-                            <span><i class="iconfont">&#xe60c;</i> 96</span>
-                        </dd>
-                        <dd>
-                            <a href="">使用 layui 秒搭后台大布局之基本结构</a>
-                            <span><i class="iconfont">&#xe60c;</i> 96</span>
-                        </dd>
-                        <dd>
-                            <a href="">使用 layui 秒搭后台大布局之基本结构</a>
-                            <span><i class="iconfont">&#xe60c;</i> 96</span>
-                        </dd>
-                        <dd>
-                            <a href="">使用 layui 秒搭后台大布局之基本结构</a>
-                            <span><i class="iconfont">&#xe60c;</i> 96</span>
-                        </dd>
-                        <dd>
-                            <a href="">使用 layui 秒搭后台大布局之基本结构</a>
-                            <span><i class="iconfont">&#xe60c;</i> 96</span>
-                        </dd>
-                        <dd>
-                            <a href="">使用 layui 秒搭后台大布局之基本结构</a>
-                            <span><i class="iconfont">&#xe60c;</i> 96</span>
-                        </dd>
-                        <dd>
-                            <a href="">使用 layui 秒搭后台大布局之基本结构</a>
-                            <span><i class="iconfont">&#xe60c;</i> 96</span>
-                        </dd>
-                        
+                         <dd>Java Developer Baidu </dd>
+                         <dd>Java Developer Baidu </dd>
+                         <dd>Java Developer Baidu </dd>
+                         <dd>Java Developer Baidu </dd>
+                         <dd>Java Developer Baidu </dd>
                     </dl>
 
                 </div>

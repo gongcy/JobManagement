@@ -105,6 +105,8 @@ public class JobDao {
             Query q = session.createQuery("from Job");
             s = (List<Job>) q.list();
             session.getTransaction().commit();
+//            System.out.println("====================");
+//            System.out.println(s);
         } catch (Exception e) {
             e.printStackTrace();
             session.getTransaction().rollback();

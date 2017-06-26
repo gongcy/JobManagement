@@ -25,11 +25,11 @@
                     <div class="layui-form layui-tab-content" id="LAY_ucm" style="padding: 20px 0;">
                         <div class="layui-tab-item layui-show">
                             <div class="layui-form layui-form-pane">
-                                <form method="post" action="student/register.htm">
+                                <form method="post" action="register.htm">
                                     <div class="layui-form-item">
                                         <label for="L_stuid" class="layui-form-label">Student ID</label>
                                         <div class="layui-input-inline">
-                                            <input type="text" id="L_stuid" name="stuid" required lay-verify="required|number" autocomplete="off" class="layui-input"
+                                            <input type="text" id="L_stuid" name="stuid" required lay-verify="required" autocomplete="off" class="layui-input"
                                                    placeholder="digits only">
                                         </div>
                                     </div>

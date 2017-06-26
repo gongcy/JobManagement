@@ -4,10 +4,6 @@
     Author     : Administrator
 --%>
 
-<%@page import="com.job.pojo.Manager"%>
-<%@page import="com.job.dao.ManagerDao"%>
-<%@page import="com.job.dao.StudentDao"%>
-<%@page import="com.job.pojo.Student"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <div class="header">
     <div class="main">
@@ -29,7 +25,7 @@
             <%
                 String sid = (String) session.getAttribute("sid");
                 String mid = (String) session.getAttribute("mid");
-                
+
                 if (sid == null && mid == null) {
             %>
             <!-- before Login -->
@@ -38,13 +34,11 @@
 
             <%
             } else if (sid != null) {
-                StudentDao studentDao = new StudentDao();
-                Student s = studentDao.getStudent(sid);
             %>
             <!-- Student Login -->
             <a class="avatar" href="student/aboutme.htm">
                 <img src="">
-                <cite><%=s.getStudentName()%></cite>
+                <cite><%=sid%></cite>
                 <i>Student</i>
             </a>
             <div class="nav">
@@ -54,13 +48,11 @@
 
             <%
             } else {
-                ManagerDao managerDao = new ManagerDao();
-                Manager m = managerDao.getManager(mid);
             %>
             <!--Manager Login-->
             <a class="avatar" href="">
-                <img src="http://tp4.sinaimg.cn/1345566427/180/5730976522/0">
-                <cite><%=m.getManagerName()%></cite>
+                <img src="../res/images/avatar/default.png">
+                <cite><%=mid%></cite>
                 <i>Manager</i>
             </a>
             <div class="nav">

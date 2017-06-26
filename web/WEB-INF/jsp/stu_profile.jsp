@@ -12,7 +12,7 @@
     </head>
 
     <body>
-        <jsp:include page="../../header.jsp" />
+        <jsp:include page="header.jsp" />
         <div class="main fly-user-main layui-clear">
             <ul class="layui-nav layui-nav-tree layui-inline">
                 <li class="layui-nav-item">
@@ -108,7 +108,7 @@
                 </div>
             </div>
         </div>
-        <jsp:include page="../../footer.jsp" />
+        <jsp:include page="footer.jsp" />
         <script src="../res/layui/layui.js"></script>
         <script>
             layui.use(['element', 'form'], function () {

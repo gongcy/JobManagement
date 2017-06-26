@@ -7,6 +7,7 @@ package com.job.service;
 
 import com.job.dao.ResumeDao;
 import com.job.pojo.Resume;
+import com.job.pojo.Student;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,8 +23,16 @@ public class ResumeService {
     private ResumeDao resumeDao;
 
     public Resume fetchResume(String stuno) {
-        List<Resume> l = resumeDao.getResumes(stuno);
-        return l.get(0);
+        Resume r = null;
+        try {
+            List<Resume> l = resumeDao.getResumes(stuno);
+            r = l.get(0);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            return r;
+        }
+
     }
 
     public boolean changeProfile(String stuno, Integer age, String edu, String email) {
@@ -32,5 +41,16 @@ public class ResumeService {
 
     public boolean changeResume(String stuno, String skills) {
         return resumeDao.changeResume(stuno, skills);
+    }
+
+    public boolean insertProfile(Student s, String email, String edu, String skills, Integer ra) {
+        Resume r = new Resume();
+        r.setStudent(s);
+        r.setAge(ra);
+        r.setSkills(skills);
+        r.setEducation(edu);
+        r.setEmail(email);
+        resumeDao.insert(r);
+        return true;
     }
 }

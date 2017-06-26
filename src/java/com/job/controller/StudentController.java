@@ -17,6 +17,7 @@ import com.job.pojo.Student;
 import com.job.service.ResumeService;
 import com.job.service.StudentService;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 /**
@@ -44,14 +45,14 @@ public class StudentController {
             @RequestParam("vcode") String vcode,
             @RequestParam("stuid") String stuid, @RequestParam("pass") String stupwd) {
         if (!session.getAttribute("rand").equals(vcode)) {
-            return "loginFail";
+            return "stu_login";
         }
         Student s = studentService.validateStudent(stuid, stupwd);
         if (s != null) {
             session.setAttribute("sid", stuid);
-            return "loginSuccess";
+            return "stu_profile";
         }
-        return "loginFail";
+        return "stu_login";
     }
 
     @RequestMapping(value = "/reg.htm", method = RequestMethod.GET)
@@ -71,17 +72,25 @@ public class StudentController {
         s.setStudentName(stuname);
 
         if (studentService.registerStudent(s)) {
+            String email = "";
+            String edu = "";
+            String skills = "";
+            Integer ra = 1;
+            
+            resumeService.insertProfile(s, email, edu, skills, ra);
+            return "stu_login";
 //            map.addAttribute("msg", "注册成功，请转到<a href='javascript:history.go(-2);'>登录页面</a>登录！");
         } else {
+            return "stu_reg";
 //            map.addAttribute("msg", "注册失败，该学号已经注册，请<a href='javascript:history.back();'>返回</a>重试！");
         }
-        return "registerResult";
+
     }
-    
+
     @RequestMapping(value = "/logout.htm", method = RequestMethod.GET)
     public String logout(HttpSession session) {
         session.invalidate();
-        return "index";
+        return "stu_login";
     }
 
     @RequestMapping(value = "/resume.htm", method = RequestMethod.GET)
@@ -137,13 +146,16 @@ public class StudentController {
         String id = (String) session.getAttribute("sid");
 
         if (id != null) {
-            Resume resume = resumeService.fetchResume(id);
             Student s = studentService.getStudent(id);
             model.addAttribute("name", s.getStudentName());
             model.addAttribute("gender", s.getGender());
-            model.addAttribute("email", resume.getEmail());
-            model.addAttribute("education", resume.getEducation());
-            model.addAttribute("skills", resume.getSkills());
+            Resume resume = resumeService.fetchResume(id);
+            if (resume != null) {
+                model.addAttribute("email", resume.getEmail());
+                model.addAttribute("education", resume.getEducation());
+                model.addAttribute("skills", resume.getSkills());
+            }
+
         }
         return "stu_aboutme";
     }
