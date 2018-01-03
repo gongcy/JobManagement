@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 /**
  *
- * @author Administrator
+ * @author gongcy
  */
 @Service
 public class CompanyService {

@@ -15,7 +15,7 @@ import org.springframework.stereotype.Repository;
 
 /**
  *
- * @author Administrator
+ * @author gongcy
  */
 @Repository
 public class StudentDao {

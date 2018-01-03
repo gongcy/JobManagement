@@ -13,7 +13,7 @@ import com.job.pojo.Manager;
 
 /**
  *
- * @author Administrator
+ * @author gongcy
  */
 @Service
 public class ManagerService {

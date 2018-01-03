@@ -27,7 +27,7 @@ import org.springframework.web.bind.support.SessionStatus;
 
 /**
  *
- * @author Administrator
+ * @author gongcy
  */
 @Controller
 @RequestMapping(value = "/manager")

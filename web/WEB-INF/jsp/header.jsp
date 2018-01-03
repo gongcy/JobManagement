@@ -1,7 +1,7 @@
 <%-- 
     Document   : header
     Created on : Jun 18, 2017, 9:29:00 PM
-    Author     : Administrator
+    Author     : gongcy
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

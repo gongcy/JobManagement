@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
- * @author Administrator
+ * @author gongcy
  */
 @Controller
 public class GlobalController {

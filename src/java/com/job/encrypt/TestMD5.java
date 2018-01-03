@@ -7,7 +7,7 @@ package com.job.encrypt;
 
 /**
  *
- * @author Administrator
+ * @author gongcy
  */
 public class TestMD5 {
 

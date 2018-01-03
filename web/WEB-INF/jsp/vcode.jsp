@@ -1,7 +1,7 @@
 <%-- 
     Document   : vcode
     Created on : Dec 28, 2016, 4:34:43 PM
-    Author     : Administrator
+    Author     : gongcy
 --%>
 <%@ page contentType="image/jpeg" import="java.awt.*, 
          java.awt.image.*,java.util.*,javax.imageio.*" %> 
