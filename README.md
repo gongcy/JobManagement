@@ -1,4 +1,4 @@
 # JobManagement
 JobManagement website
 
-JSP + Spring + Spring MVC + Hibernate + LayUI
+JSP + Spring + Spring MVC + Hibernate + SQL Server+ LayUI
