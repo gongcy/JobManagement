@@ -1,6 +1,9 @@
 CREATE DATABASE JobManagement
 
+GO
+
 USE JobManagement
+
 GO
 
 CREATE TABLE Student (
